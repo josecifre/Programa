@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebServiceVenalia" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebServiceVenalia" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://webservice.venalia.net/WebServiceVenalia.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="clResultado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="InformacionAdicional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clResultado" nillable="true" type="tns:clResultado" />
+  <xs:complexType name="clDatosDeUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPActiva" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Baja" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaAlta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaAltaDispositivo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAlta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clDatosDeUsuario" nillable="true" type="tns:clDatosDeUsuario" />
+  <xs:complexType name="ArrayOfclInmueblesListado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clInmueblesListado" nillable="true" type="tns:clInmueblesListado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclInmueblesListado" nillable="true" type="tns:ArrayOfclInmueblesListado" />
+  <xs:complexType name="clInmueblesListado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amueblado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Banos" type="xs:int" />
+      <xs:element minOccurs="0" name="CalificacionEnergetica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoEmpresa" type="xs:int" />
+      <xs:element minOccurs="0" name="Contador" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionZona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Favorito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Garaje" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Habitaciones" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListaFotos" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Metros" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreInmobiliaria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oportunidad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Piscina" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Poblacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Precio" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioBaja" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Referencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RutaImagenPrincipal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RutaImagenPrincipalGrande" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoInmobiliaria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoWebApp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clInmueblesListado" nillable="true" type="tns:clInmueblesListado" />
+  <xs:complexType name="clFiltrosBusqueda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlquilerOpcionCompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ascensor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BalconPatio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BanosMinimo" type="xs:int" />
+      <xs:element minOccurs="0" name="CocinaIndependiente" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContadorBusqueda" type="xs:int" />
+      <xs:element minOccurs="0" name="ContadorEmpresa" type="xs:int" />
+      <xs:element minOccurs="0" name="ContadorUsuario" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Estado" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="FechaUltimaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Garaje" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HabitacionesMinimo" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObtenerNumero" type="xs:int" />
+      <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oportunidades" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orden" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Piscina" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Poblacion" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="PrecioMaximo" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Provincia" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Referecia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TamanoMinimo" type="xs:int" />
+      <xs:element minOccurs="0" name="Terraza" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Tipo" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="TipoInmueble" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Zona" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clFiltrosBusqueda" nillable="true" type="tns:clFiltrosBusqueda" />
+  <xs:complexType name="ArrayOfclOfertas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clOfertas" nillable="true" type="tns:clOfertas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclOfertas" nillable="true" type="tns:ArrayOfclOfertas" />
+  <xs:complexType name="clOfertas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clOfertas" nillable="true" type="tns:clOfertas" />
+  <xs:complexType name="ArrayOfclEstados">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clEstados" nillable="true" type="tns:clEstados" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclEstados" nillable="true" type="tns:ArrayOfclEstados" />
+  <xs:complexType name="clEstados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clEstados" nillable="true" type="tns:clEstados" />
+  <xs:complexType name="ArrayOfclPoblaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clPoblaciones" nillable="true" type="tns:clPoblaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclPoblaciones" nillable="true" type="tns:ArrayOfclPoblaciones" />
+  <xs:complexType name="clPoblaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clPoblaciones" nillable="true" type="tns:clPoblaciones" />
+  <xs:complexType name="ArrayOfclTamanos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clTamanos" nillable="true" type="tns:clTamanos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclTamanos" nillable="true" type="tns:ArrayOfclTamanos" />
+  <xs:complexType name="clTamanos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Posicion" type="xs:int" />
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clTamanos" nillable="true" type="tns:clTamanos" />
+  <xs:complexType name="ArrayOfclPrecios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clPrecios" nillable="true" type="tns:clPrecios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclPrecios" nillable="true" type="tns:ArrayOfclPrecios" />
+  <xs:complexType name="clPrecios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clPrecios" nillable="true" type="tns:clPrecios" />
+  <xs:complexType name="ArrayOfclTipoInmueble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clTipoInmueble" nillable="true" type="tns:clTipoInmueble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclTipoInmueble" nillable="true" type="tns:ArrayOfclTipoInmueble" />
+  <xs:complexType name="clTipoInmueble">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clTipoInmueble" nillable="true" type="tns:clTipoInmueble" />
+  <xs:complexType name="ArrayOfclZonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clZonas" nillable="true" type="tns:clZonas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclZonas" nillable="true" type="tns:ArrayOfclZonas" />
+  <xs:complexType name="clZonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clZonas" nillable="true" type="tns:clZonas" />
+  <xs:complexType name="ArrayOfclProvincias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clProvincias" nillable="true" type="tns:clProvincias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclProvincias" nillable="true" type="tns:ArrayOfclProvincias" />
+  <xs:complexType name="clProvincias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clProvincias" nillable="true" type="tns:clProvincias" />
+  <xs:complexType name="ArrayOfclHabitaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clHabitaciones" nillable="true" type="tns:clHabitaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclHabitaciones" nillable="true" type="tns:ArrayOfclHabitaciones" />
+  <xs:complexType name="clHabitaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clHabitaciones" nillable="true" type="tns:clHabitaciones" />
+  <xs:complexType name="ArrayOfclBanos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clBanos" nillable="true" type="tns:clBanos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclBanos" nillable="true" type="tns:ArrayOfclBanos" />
+  <xs:complexType name="clBanos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Texto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clBanos" nillable="true" type="tns:clBanos" />
+  <xs:complexType name="ArrayOfclAlertas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clAlertas" nillable="true" type="tns:clAlertas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclAlertas" nillable="true" type="tns:ArrayOfclAlertas" />
+  <xs:complexType name="clAlertas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contador" type="xs:int" />
+      <xs:element minOccurs="0" name="ContadorUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="LineaHabitaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaPoblacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaPrecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaSuperficie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaTipoInmuebleOferta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaTitulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clAlertas" nillable="true" type="tns:clAlertas" />
+  <xs:complexType name="clInmueblesAlta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlquilerOpcionCompra" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AlquilerVacacional" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Altura" type="xs:int" />
+      <xs:element minOccurs="0" name="Amueblado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnoConstruccion" type="xs:int" />
+      <xs:element minOccurs="0" name="Ascensor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Balcon" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Banos" type="xs:int" />
+      <xs:element minOccurs="0" name="CalificacionEnergetica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CambioPrecio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CocinaOffice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CodPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoEmpresa" type="xs:int" />
+      <xs:element minOccurs="0" name="Contador" type="xs:long" />
+      <xs:element minOccurs="0" name="Delegacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duplex" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extras" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaAlta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaCambioPrecio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimoCambio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FotoPrincipal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Galeria" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Garaje" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GarajeCerrado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Habitaciones" type="xs:int" />
+      <xs:element minOccurs="0" name="Jardin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MBalcon" type="xs:int" />
+      <xs:element minOccurs="0" name="MBalcon2" type="xs:int" />
+      <xs:element minOccurs="0" name="MGaraje" type="xs:int" />
+      <xs:element minOccurs="0" name="MJardin" type="xs:int" />
+      <xs:element minOccurs="0" name="MPatio" type="xs:int" />
+      <xs:element minOccurs="0" name="MPatio2" type="xs:int" />
+      <xs:element minOccurs="0" name="MPlaya" type="xs:int" />
+      <xs:element minOccurs="0" name="MTerraza" type="xs:int" />
+      <xs:element minOccurs="0" name="MTerraza2" type="xs:int" />
+      <xs:element minOccurs="0" name="MTrastero" type="xs:int" />
+      <xs:element minOccurs="0" name="Metros" type="xs:int" />
+      <xs:element minOccurs="0" name="MostrarPPrincipalWeb" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oportunidad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Orientacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Patio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Piscina" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Poblacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Precio" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioGaraje" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioTrastero" type="xs:int" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Puerta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Referencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reservado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Terraza" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Trastero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Via" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VistasAlMar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZonaComercial" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clInmueblesAlta" nillable="true" type="tns:clInmueblesAlta" />
+</xs:schema>

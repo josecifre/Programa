@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtWeb.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAGMAcABnADEAMgA1ADIADQAKAHsADQAKAFwAZgBvAG4AdAB0AGIAbAANAAoAewBcAGYAMAAgAFQAaQBtAGUAcwAgAE4AZQB3ACAAUgBvAG0AYQBuADsAfQANAAoAfQANAAoAewANAAoAXABjAG8AbABvAHIAdABiAGwADQAKADsADQAKAFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAwADsADQAKAFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAyADUANQA7AA0ACgB9AA0ACgBcAG4AbwB1AGkAYwBvAG0AcABhAHQAXABzAHAAbAB5AHQAdwBuAGkAbgBlAFwAaAB0AG0AYQB1AHQAcwBwAHsAXABzAGUAYwB0AGQAXABwAGEAcgBkAFwAcABsAGEAaQBuAFwAcQBsAHsAXABiAFwAZgBzADIAMABcAGMAZgAxACAAUABhAHIAYQAgAHYAZQByAGwAbwAgAGUAbgAgAGwAYQAgAHcAZQBiACAAcAB1AGwAcwBlACAAYQBxAHUAXAB1ADIAMwA3AFwAJwBlAGQAfQBcAGMAZgAxAFwAcABhAHIAfQANAAoAfQANAAoA</value>
+  </data>
+  <data name="ccPropietario.Expression" xml:space="preserve">
+    <value>[Nombre]+',  '+
+Iif([Telefono1] != '',' Tel 1: '+ [Telefono1],'')+
+Iif([Telefono2] != '',' Tel 2: '+ [Telefono2],'')+
+Iif([Telefono3] != '',' Tel 2: '+ [Telefono3],'')+
+Iif([Telefono4] != '',' Tel 2: '+ [Telefono4],'')+
+Iif([TelefonoMovil] != '',' Movil: '+[TelefonoMovil],'')+
+Iif([Email] != '',' Email: '+[Email],'')+
+Iif([Email2] != '','Email2: '+[Email2],'')</value>
+  </data>
+  <data name="$this.DataSourceSchema" xml:space="preserve">
+    <value>&lt;?xml version="1.0"?&gt;
+&lt;xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"&gt;
+  &lt;xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+        &lt;xs:element name="Datos"&gt;
+          &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Contador" type="xs:long" /&gt;
+              &lt;xs:element name="Referencia"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="CodigoEmpresa" type="xs:int" /&gt;
+              &lt;xs:element name="Delegacion" type="xs:int" /&gt;
+              &lt;xs:element name="ContadorEmpleado" type="xs:long" /&gt;
+              &lt;xs:element name="ContadorPropietario" type="xs:long" /&gt;
+              &lt;xs:element name="Baja" type="xs:boolean" /&gt;
+              &lt;xs:element name="TipoVenta"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="FechaAlta" type="xs:dateTime" /&gt;
+              &lt;xs:element name="FechaUltimaLlamadaPropietario" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="FechaReservado" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="FechaCambioPrecio" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="FechaQuitaReservado" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="FechaUltimoCambio" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="AlquilerOpcionCompra" type="xs:boolean" /&gt;
+              &lt;xs:element name="AlquilerVacacional" type="xs:boolean" /&gt;
+              &lt;xs:element name="Reservado" type="xs:boolean" /&gt;
+              &lt;xs:element name="Llaves" type="xs:boolean" /&gt;
+              &lt;xs:element name="Precio" type="xs:int" /&gt;
+              &lt;xs:element name="PrecioPropietario" type="xs:int" /&gt;
+              &lt;xs:element name="Gastos"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="500" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Via"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Direccion"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Numero"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Altura" type="xs:int" /&gt;
+              &lt;xs:element name="CodPostal"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Poblacion"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Provincia"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Puerta"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Direccion2" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="DireccionMapa"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Metros" type="xs:int" /&gt;
+              &lt;xs:element name="Banos" type="xs:int" /&gt;
+              &lt;xs:element name="Habitaciones" type="xs:int" /&gt;
+              &lt;xs:element name="AnoConstruccion" type="xs:int" /&gt;
+              &lt;xs:element name="MPlaya" type="xs:int" /&gt;
+              &lt;xs:element name="Ascensor" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="CocinaOffice" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Piscina" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Duplex" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Galeria" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="AireAcondicionado" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Calefaccion" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Tipo"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Orientacion"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Zona"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Estado"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Extras"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="3500" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Oportunidad" type="xs:boolean" /&gt;
+              &lt;xs:element name="Escaparate" type="xs:boolean" /&gt;
+              &lt;xs:element name="NOAlquiler" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Ocultar" type="xs:boolean" /&gt;
+              &lt;xs:element name="Cartel" type="xs:boolean" /&gt;
+              &lt;xs:element name="Balcon" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="MBalcon" type="xs:int" /&gt;
+              &lt;xs:element name="MBalcon2" type="xs:int" /&gt;
+              &lt;xs:element name="Patio" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="MPatio" type="xs:int" /&gt;
+              &lt;xs:element name="MPatio2" type="xs:int" /&gt;
+              &lt;xs:element name="Terraza" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="MTerraza" type="xs:int" /&gt;
+              &lt;xs:element name="MTerraza2" type="xs:int" /&gt;
+              &lt;xs:element name="Jardin" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="MJardin" type="xs:int" /&gt;
+              &lt;xs:element name="Trastero" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="MTrastero" type="xs:int" /&gt;
+              &lt;xs:element name="PrecioTrastero" type="xs:int" /&gt;
+              &lt;xs:element name="Garaje" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="PrecioGaraje" type="xs:int" /&gt;
+              &lt;xs:element name="MGaraje" type="xs:int" /&gt;
+              &lt;xs:element name="GarajeCerrado" type="xs:boolean" /&gt;
+              &lt;xs:element name="GarajeNumero" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Electrodomesticos" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="PrimeraLineaPlaya" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="FotoPrincipal"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="250" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="FotosPc" type="xs:int" /&gt;
+              &lt;xs:element name="FotosWeb" type="xs:int" /&gt;
+              &lt;xs:element name="FotoEscaparate" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="250" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="FotoEscaparate2" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="250" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Agrupacion"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="ImporteHipoteca" type="xs:int" minOccurs="0" /&gt;
+              &lt;xs:element name="CalificacionEnergetica"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="10" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="VistasAlMar" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="EnviadaFicha" type="xs:boolean" /&gt;
+              &lt;xs:element name="Amueblado" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="SemiAmueblado" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Personas" type="xs:int" minOccurs="0" /&gt;
+              &lt;xs:element name="FianzaAlquiler" type="xs:int" minOccurs="0" /&gt;
+              &lt;xs:element name="ComunidadIncluida" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="PrecioComunidad" type="xs:int" minOccurs="0" /&gt;
+              &lt;xs:element name="AccesoMinusvalidos" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Urbanizacion" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="ZonaComercial" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="VivenEnEl" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="CambioPrecio"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Observaciones" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="5000" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="PortalYaEncontre" type="xs:boolean" /&gt;
+              &lt;xs:element name="PortalFotoCasa" type="xs:boolean" /&gt;
+              &lt;xs:element name="PortalIdealista" type="xs:boolean" /&gt;
+              &lt;xs:element name="MostrarPPrincipalWeb" type="xs:boolean" /&gt;
+              &lt;xs:element name="PortalHogaria" type="xs:boolean" /&gt;
+              &lt;xs:element name="PlayaDerecha" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="TrasteroNumero"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="AlquiladoPorNosotros" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="QuienCartel" type="xs:int" /&gt;
+              &lt;xs:element name="FechaCartel" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="PrecioJunio" type="xs:int" /&gt;
+              &lt;xs:element name="PrecioJulio" type="xs:int" /&gt;
+              &lt;xs:element name="PrecioAgosto" type="xs:int" /&gt;
+              &lt;xs:element name="TipoCalentador" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="TipoCocina" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="AlturaFinca" type="xs:int" /&gt;
+              &lt;xs:element name="FotosRevisar" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Clasificacion" type="xs:int" /&gt;
+              &lt;xs:element name="ContadorOrigen" type="xs:int" /&gt;
+              &lt;xs:element name="Montana" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Contador1" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" /&gt;
+              &lt;xs:element name="CodigoEmpresa1" type="xs:int" /&gt;
+              &lt;xs:element name="FechaAlta1" type="xs:dateTime" /&gt;
+              &lt;xs:element name="Delegacion1" type="xs:int" /&gt;
+              &lt;xs:element name="ContadorEmpleado1" type="xs:long" /&gt;
+              &lt;xs:element name="Nombre"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="NIF"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Alias"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Domicilio"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Poblacion1"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="CodPostal1"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="20" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Provincia1"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Pais"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Telefono1"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Telefono2"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Telefono3"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Telefono4"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="TelefonoMovil"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Fax"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Email"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Email2"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="Web"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="150" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="NoInmobiliaria" type="xs:boolean" /&gt;
+              &lt;xs:element name="AvisadoTresPorCien" type="xs:boolean" /&gt;
+              &lt;xs:element name="AvisadoMensualidad" type="xs:boolean" /&gt;
+              &lt;xs:element name="FechaEmail" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="FechaLlamada" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="NoQuiereRecibirEmails" type="xs:boolean" /&gt;
+              &lt;xs:element name="Cuenta"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="FechaNoContesta" type="xs:dateTime" minOccurs="0" /&gt;
+              &lt;xs:element name="NOAnimales" type="xs:boolean" /&gt;
+              &lt;xs:element name="NoExtranjeros" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="SeguroVivienda" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Observaciones1" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="5000" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="TipoEmail"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="50" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+              &lt;xs:element name="TextoReservado" msdata:ReadOnly="true" minOccurs="0"&gt;
+                &lt;xs:simpleType&gt;
+                  &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:maxLength value="4000" /&gt;
+                  &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+              &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:choice&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:unique name="Constraint1" msdata:PrimaryKey="true"&gt;
+      &lt;xs:selector xpath=".//Datos" /&gt;
+      &lt;xs:field xpath="Contador" /&gt;
+      &lt;xs:field xpath="Contador1" /&gt;
+    &lt;/xs:unique&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</value>
+  </data>
+</root>

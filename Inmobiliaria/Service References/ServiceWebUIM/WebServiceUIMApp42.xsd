@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://uim.tresbits.es/WebServiceUIMApp.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" />
+  <xs:import schemaLocation="http://uim.tresbits.es/WebServiceUIMApp.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoyFacil">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoyFacilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SoyFacilResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="DatosCliente" nillable="true" type="q3:clDatosDeUsuario" />
+        <xs:element minOccurs="0" name="RegistrationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ValidarUsuarioResult" nillable="true" type="q4:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AltaUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="Usuario" nillable="true" type="q5:clDatosDeUsuario" />
+        <xs:element minOccurs="0" name="TipoAlta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegistrationID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VersionAPP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AltaUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="AltaUsuarioResult" nillable="true" type="q6:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarEliminarFavorito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="ContadorInmueble" type="xs:int" />
+        <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarEliminarFavoritoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="InsertarEliminarFavoritoResult" nillable="true" type="q7:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosInmobiliaria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorEmpresa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosInmobiliariaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerDatosInmobiliariaResult" nillable="true" type="q8:clDatosInmobiliaria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFavoritos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFavoritosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerFavoritosResult" nillable="true" type="q9:ArrayOfclInmueblesListado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusqueda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="FiltroBusqueda" nillable="true" type="q10:clFiltrosBusqueda" />
+        <xs:element minOccurs="0" name="Pagina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="HacerBusquedaResult" nillable="true" type="q11:ArrayOfclInmueblesListado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaParaDetalle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="FiltroBusqueda" nillable="true" type="q12:clFiltrosBusqueda" />
+        <xs:element minOccurs="0" name="Pagina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaParaDetalleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="HacerBusquedaParaDetalleResult" nillable="true" type="q13:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuantosInmuebles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="FiltroBusqueda" nillable="true" type="q14:clFiltrosBusqueda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuantosInmueblesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuantosInmueblesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaSinPaginacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="FiltroBusqueda" nillable="true" type="q15:clFiltrosBusqueda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaSinPaginacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="HacerBusquedaSinPaginacionResult" nillable="true" type="q16:ArrayOfclInmueblesListado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaConTodosLosCampos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="FiltroBusqueda" nillable="true" type="q17:clFiltrosBusqueda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaConTodosLosCamposResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="HacerBusquedaConTodosLosCamposResult" nillable="true" type="q18:ArrayOfclInmueblesDetalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDetalleInmueble">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorInmueble" type="xs:int" />
+        <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDetalleInmuebleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerDetalleInmuebleResult" nillable="true" type="q19:clInmueblesDetalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosInmuebles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosInmueblesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerTodosLosInmueblesResult" nillable="true" type="q20:ArrayOfclInmueblesListado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosInmueblesConTodosLosCampos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosInmueblesConTodosLosCamposResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerTodosLosInmueblesConTodosLosCamposResult" nillable="true" type="q21:ArrayOfclInmueblesDetalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerTodosLosUsuariosResult" nillable="true" type="q22:ArrayOfclDatosDeUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosDispositivos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosLosDispositivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerTodosLosDispositivosResult" nillable="true" type="q23:ArrayOfclDatosDeUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaEstados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaEstadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaEstadosResult" nillable="true" type="q24:ArrayOfclEstados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPoblaciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPoblacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaPoblacionesResult" nillable="true" type="q25:ArrayOfclPoblaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTamanos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoInmueble" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTamanosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaTamanosResult" nillable="true" type="q26:ArrayOfclTamanos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPrecios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoVenta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPreciosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaPreciosResult" nillable="true" type="q27:ArrayOfclPrecios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaOfertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaOfertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaOfertasResult" nillable="true" type="q28:ArrayOfclOfertas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoInmueble" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTipoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaTipoResult" nillable="true" type="q29:ArrayOfclTipoInmueble" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaZonas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Poblacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaZonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaZonasResult" nillable="true" type="q30:ArrayOfclZonas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaHabitaciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaHabitacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaHabitacionesResult" nillable="true" type="q31:ArrayOfclHabitaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaBanos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaBanosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaBanosResult" nillable="true" type="q32:ArrayOfclBanos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAlertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAlertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerAlertasResult" nillable="true" type="q33:ArrayOfclAlertas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAlertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorAlerta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAlertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EliminarAlertasResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarAlertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="Alerta" nillable="true" type="q34:clFiltrosBusqueda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarAlertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="InsertarAlertasResult" nillable="true" type="q35:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFiltrosAlertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorAlerta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFiltrosAlertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerFiltrosAlertasResult" nillable="true" type="q36:clFiltrosBusqueda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFiltrosUltimaBusqueda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegistrationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFiltrosUltimaBusquedaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerFiltrosUltimaBusquedaResult" nillable="true" type="q37:clFiltrosBusqueda" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuitarDispositivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegistrationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuitarDispositivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="QuitarDispositivoResult" nillable="true" type="q38:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerClave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NIF" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerClaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerClaveResult" nillable="true" type="q39:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNombre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNombreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerNombreResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaPorMapa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="FiltroBusqueda" nillable="true" type="q40:clFiltrosBusqueda" />
+        <xs:element minOccurs="0" name="Vista" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HacerBusquedaPorMapaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="HacerBusquedaPorMapaResult" nillable="true" type="q41:ArrayOfclDatosMapa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarNotificaciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="Notificacion" nillable="true" type="q42:clNotificacion" />
+        <xs:element minOccurs="0" name="MayorOIgualQueVersionAPP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MenorOIgualQueVersionAPP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarNotificacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="EnviarNotificacionesResult" nillable="true" type="q43:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EscribirMensaje3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorEmisor" type="xs:int" />
+        <xs:element minOccurs="0" name="ContadorReceptor" type="xs:int" />
+        <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorEmpresa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EscribirMensaje3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="EscribirMensaje3Result" nillable="true" type="q44:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMensajes3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorReceptor" type="xs:int" />
+        <xs:element minOccurs="0" name="ContadorEmpresa" type="xs:int" />
+        <xs:element minOccurs="0" name="SoyAinia" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMensajes3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ObtenerMensajes3Result" nillable="true" type="q45:ArrayOfclMensajes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BorrarMensajesDescargados_v3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ContadorMensaje" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BorrarMensajesDescargados_v3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="BorrarMensajesDescargados_v3Result" nillable="true" type="q46:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DarBajaUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Contador" type="xs:int" />
+        <xs:element minOccurs="0" name="Baja" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DarBajaUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="DarBajaUsuarioResult" nillable="true" type="q47:clResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuantosSinFiltros">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Poblacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoPrincipal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OpcionCompra" type="xs:boolean" />
+        <xs:element minOccurs="0" name="TipoVenta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuantosSinFiltrosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuantosSinFiltrosResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPoblacionesDeInmuebles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoInmueble" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Oferta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPoblacionesDeInmueblesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaPoblacionesDeInmueblesResult" nillable="true" type="q48:ArrayOfclPoblaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaConTodoConTexto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Campo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaConTodoConTextoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" minOccurs="0" name="ListaConTodoConTextoResult" nillable="true" type="q49:ArrayOfclPoblaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

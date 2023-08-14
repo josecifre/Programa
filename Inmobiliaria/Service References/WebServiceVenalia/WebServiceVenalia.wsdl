@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebServiceVenalia" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://webservice.venalia.net/WebServiceVenalia.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://webservice.venalia.net/WebServiceVenalia.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://webservice.venalia.net/WebServiceVenalia.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebServiceVenalia" />
+      <xsd:import schemaLocation="http://webservice.venalia.net/WebServiceVenalia.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebServiceVenalia_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_SoyFacil_InputMessage">
+    <wsdl:part name="parameters" element="tns:SoyFacil" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_SoyFacil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SoyFacilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_SoyFacil_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q1:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ValidarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ValidarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ValidarUsuario_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q2:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_AltaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AltaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_AltaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_AltaUsuario_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q3:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarEliminarFavorito_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEliminarFavorito" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarEliminarFavorito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEliminarFavoritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarEliminarFavorito_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q4:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFavoritos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFavoritos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFavoritos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFavoritosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFavoritos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q5:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_HacerBusqueda_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusqueda" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_HacerBusqueda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_HacerBusqueda_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q6:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_CuantosInmuebles_InputMessage">
+    <wsdl:part name="parameters" element="tns:CuantosInmuebles" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_CuantosInmuebles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CuantosInmueblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_CuantosInmuebles_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q7:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaOfertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaOfertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaOfertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaOfertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaOfertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q8:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEstados" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaEstados_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q9:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaPoblaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoblaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaPoblaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoblacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaPoblaciones_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q10:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaTamanos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTamanos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaTamanos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTamanosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaTamanos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q11:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaPrecios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaPrecios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaPrecios_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q12:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTipo" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaTipo_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q13:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaZonas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaZonas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q14:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaProvincias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaProvincias" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaProvincias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaProvinciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaProvincias_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q15:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaHabitaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaHabitaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaHabitaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaHabitacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaHabitaciones_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q16:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaBanos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaBanos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaBanos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaBanosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ListaBanos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q17:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q18:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_EliminarAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_EliminarAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_EliminarAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q19:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q20:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFiltrosAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFiltrosAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFiltrosAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q21:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFiltrosUltimaBusqueda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosUltimaBusqueda" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFiltrosUltimaBusqueda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosUltimaBusquedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ObtenerFiltrosUltimaBusqueda_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q22:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_DarBajaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DarBajaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_DarBajaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DarBajaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_DarBajaUsuario_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q23:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarBD_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarBD" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarBD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarBD_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q24:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ActualizaReservado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaReservado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ActualizaReservado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaReservadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ActualizaReservado_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q25:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ActualizaFotoPrincipal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaFotoPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ActualizaFotoPrincipal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaFotoPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_ActualizaFotoPrincipal_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q26:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_BajaInmueble_InputMessage">
+    <wsdl:part name="parameters" element="tns:BajaInmueble" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_BajaInmueble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BajaInmuebleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_BajaInmueble_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q27:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_AltaInmueble_InputMessage">
+    <wsdl:part name="parameters" element="tns:AltaInmueble" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_AltaInmueble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaInmuebleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_AltaInmueble_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q28:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_CambiaReferencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiaReferencia" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_CambiaReferencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiaReferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_CambiaReferencia_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q29:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarBDUIM_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarBDUIM" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarBDUIM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarBDUIMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceVenalia_InsertarBDUIM_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/WebServiceVenalia" name="detail" element="q30:clResultado" />
+  </wsdl:message>
+  <wsdl:portType name="IWebServiceVenalia">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/GetData" message="tns:IWebServiceVenalia_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/GetDataResponse" message="tns:IWebServiceVenalia_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/GetDataUsingDataContract" message="tns:IWebServiceVenalia_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/GetDataUsingDataContractResponse" message="tns:IWebServiceVenalia_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SoyFacil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/SoyFacil" message="tns:IWebServiceVenalia_SoyFacil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/SoyFacilResponse" message="tns:IWebServiceVenalia_SoyFacil_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/SoyFacilclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_SoyFacil_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ValidarUsuario" message="tns:IWebServiceVenalia_ValidarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ValidarUsuarioResponse" message="tns:IWebServiceVenalia_ValidarUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ValidarUsuarioclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ValidarUsuario_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/AltaUsuario" message="tns:IWebServiceVenalia_AltaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/AltaUsuarioResponse" message="tns:IWebServiceVenalia_AltaUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/AltaUsuarioclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_AltaUsuario_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEliminarFavorito">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarEliminarFavorito" message="tns:IWebServiceVenalia_InsertarEliminarFavorito_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarEliminarFavoritoResponse" message="tns:IWebServiceVenalia_InsertarEliminarFavorito_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarEliminarFavoritoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_InsertarEliminarFavorito_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFavoritos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFavoritos" message="tns:IWebServiceVenalia_ObtenerFavoritos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFavoritosResponse" message="tns:IWebServiceVenalia_ObtenerFavoritos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFavoritosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ObtenerFavoritos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusqueda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/HacerBusqueda" message="tns:IWebServiceVenalia_HacerBusqueda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/HacerBusquedaResponse" message="tns:IWebServiceVenalia_HacerBusqueda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/HacerBusquedaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_HacerBusqueda_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CuantosInmuebles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/CuantosInmuebles" message="tns:IWebServiceVenalia_CuantosInmuebles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/CuantosInmueblesResponse" message="tns:IWebServiceVenalia_CuantosInmuebles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/CuantosInmueblesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_CuantosInmuebles_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaOfertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaOfertas" message="tns:IWebServiceVenalia_ListaOfertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaOfertasResponse" message="tns:IWebServiceVenalia_ListaOfertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaOfertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaOfertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaEstados" message="tns:IWebServiceVenalia_ListaEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaEstadosResponse" message="tns:IWebServiceVenalia_ListaEstados_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaEstadosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaEstados_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoblaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaPoblaciones" message="tns:IWebServiceVenalia_ListaPoblaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaPoblacionesResponse" message="tns:IWebServiceVenalia_ListaPoblaciones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaPoblacionesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaPoblaciones_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTamanos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaTamanos" message="tns:IWebServiceVenalia_ListaTamanos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaTamanosResponse" message="tns:IWebServiceVenalia_ListaTamanos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaTamanosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaTamanos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrecios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaPrecios" message="tns:IWebServiceVenalia_ListaPrecios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaPreciosResponse" message="tns:IWebServiceVenalia_ListaPrecios_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaPreciosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaPrecios_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaTipo" message="tns:IWebServiceVenalia_ListaTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaTipoResponse" message="tns:IWebServiceVenalia_ListaTipo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaTipoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaTipo_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaZonas" message="tns:IWebServiceVenalia_ListaZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaZonasResponse" message="tns:IWebServiceVenalia_ListaZonas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaZonasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaZonas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaProvincias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaProvincias" message="tns:IWebServiceVenalia_ListaProvincias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaProvinciasResponse" message="tns:IWebServiceVenalia_ListaProvincias_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaProvinciasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaProvincias_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaHabitaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaHabitaciones" message="tns:IWebServiceVenalia_ListaHabitaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaHabitacionesResponse" message="tns:IWebServiceVenalia_ListaHabitaciones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaHabitacionesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaHabitaciones_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBanos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaBanos" message="tns:IWebServiceVenalia_ListaBanos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaBanosResponse" message="tns:IWebServiceVenalia_ListaBanos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ListaBanosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ListaBanos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerAlertas" message="tns:IWebServiceVenalia_ObtenerAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerAlertasResponse" message="tns:IWebServiceVenalia_ObtenerAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ObtenerAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/EliminarAlertas" message="tns:IWebServiceVenalia_EliminarAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/EliminarAlertasResponse" message="tns:IWebServiceVenalia_EliminarAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/EliminarAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_EliminarAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarAlertas" message="tns:IWebServiceVenalia_InsertarAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarAlertasResponse" message="tns:IWebServiceVenalia_InsertarAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_InsertarAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosAlertas" message="tns:IWebServiceVenalia_ObtenerFiltrosAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosAlertasResponse" message="tns:IWebServiceVenalia_ObtenerFiltrosAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ObtenerFiltrosAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosUltimaBusqueda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosUltimaBusqueda" message="tns:IWebServiceVenalia_ObtenerFiltrosUltimaBusqueda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosUltimaBusquedaResponse" message="tns:IWebServiceVenalia_ObtenerFiltrosUltimaBusqueda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosUltimaBusquedaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ObtenerFiltrosUltimaBusqueda_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DarBajaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/DarBajaUsuario" message="tns:IWebServiceVenalia_DarBajaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/DarBajaUsuarioResponse" message="tns:IWebServiceVenalia_DarBajaUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/DarBajaUsuarioclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_DarBajaUsuario_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarBD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarBD" message="tns:IWebServiceVenalia_InsertarBD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarBDResponse" message="tns:IWebServiceVenalia_InsertarBD_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarBDclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_InsertarBD_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaReservado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ActualizaReservado" message="tns:IWebServiceVenalia_ActualizaReservado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ActualizaReservadoResponse" message="tns:IWebServiceVenalia_ActualizaReservado_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ActualizaReservadoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ActualizaReservado_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaFotoPrincipal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/ActualizaFotoPrincipal" message="tns:IWebServiceVenalia_ActualizaFotoPrincipal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/ActualizaFotoPrincipalResponse" message="tns:IWebServiceVenalia_ActualizaFotoPrincipal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/ActualizaFotoPrincipalclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_ActualizaFotoPrincipal_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BajaInmueble">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/BajaInmueble" message="tns:IWebServiceVenalia_BajaInmueble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/BajaInmuebleResponse" message="tns:IWebServiceVenalia_BajaInmueble_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/BajaInmuebleclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_BajaInmueble_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaInmueble">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/AltaInmueble" message="tns:IWebServiceVenalia_AltaInmueble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/AltaInmuebleResponse" message="tns:IWebServiceVenalia_AltaInmueble_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/AltaInmuebleclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_AltaInmueble_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiaReferencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/CambiaReferencia" message="tns:IWebServiceVenalia_CambiaReferencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/CambiaReferenciaResponse" message="tns:IWebServiceVenalia_CambiaReferencia_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/CambiaReferenciaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_CambiaReferencia_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarBDUIM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarBDUIM" message="tns:IWebServiceVenalia_InsertarBDUIM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarBDUIMResponse" message="tns:IWebServiceVenalia_InsertarBDUIM_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceVenalia/InsertarBDUIMclResultadoFault" name="clResultadoFault" message="tns:IWebServiceVenalia_InsertarBDUIM_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWebServiceVenalia" type="tns:IWebServiceVenalia">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoyFacil">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/SoyFacil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/AltaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEliminarFavorito">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/InsertarEliminarFavorito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFavoritos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ObtenerFavoritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusqueda">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/HacerBusqueda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CuantosInmuebles">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/CuantosInmuebles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaOfertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaOfertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaEstados">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoblaciones">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaPoblaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTamanos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaTamanos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrecios">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTipo">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaZonas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaProvincias">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaProvincias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaHabitaciones">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaHabitaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBanos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ListaBanos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ObtenerAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/EliminarAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/InsertarAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosUltimaBusqueda">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ObtenerFiltrosUltimaBusqueda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DarBajaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/DarBajaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarBD">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/InsertarBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaReservado">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ActualizaReservado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaFotoPrincipal">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/ActualizaFotoPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BajaInmueble">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/BajaInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AltaInmueble">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/AltaInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CambiaReferencia">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/CambiaReferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarBDUIM">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceVenalia/InsertarBDUIM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceVenalia">
+    <wsdl:port name="BasicHttpBinding_IWebServiceVenalia" binding="tns:BasicHttpBinding_IWebServiceVenalia">
+      <soap:address location="http://webservice.venalia.net/WebServiceVenalia.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

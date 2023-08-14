@@ -1,0 +1,1365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A569280A-D9AD-4B0F-AAEF-549BAB9E609E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Program</StartupObject>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Venalia</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Venalia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Venalia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.PivotChart.Web.Design.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1.UI, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.1.UI, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.1.Wizard, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v13.1.Win, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1.Extensions, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Reporting.Extensions, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Reporting, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4058.19167, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="FuncionesGenerales" />
+    <Import Include="Igis.ControlesTB" />
+    <Import Include="Igis.FuncionesGenerales" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="TrameX.FuncionesGenerales" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formularios\frmRed.Designer.vb">
+      <DependentUpon>frmRed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBuscador.Designer.vb">
+      <DependentUpon>frmBuscador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmBuscador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFechas.Designer.vb">
+      <DependentUpon>frmFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmIntroducirTextoMensaje.designer.vb">
+      <DependentUpon>FrmIntroducirTextoMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmIntroducirTextoMensaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmWordReport.Designer.vb">
+      <DependentUpon>frmWordReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmWordReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListados.Designer.vb">
+      <DependentUpon>frmListados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColoresGrid.Designer.vb">
+      <DependentUpon>frmColoresGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmColoresGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTextoAEnviarSMS.Designer.vb">
+      <DependentUpon>frmTextoAEnviarSMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTextoAEnviarSMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuncionesGenerales\ActualizaPerfil.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEscaparate.Designer.vb">
+      <DependentUpon>frmEscaparate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmEscaparate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFichaReserva.Designer.vb">
+      <DependentUpon>frmFichaReserva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmFichaReserva.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFichaAlquiler.Designer.vb">
+      <DependentUpon>frmFichaAlquiler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmFichaAlquiler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConfiguracionEmpresa.Designer.vb">
+      <DependentUpon>frmConfiguracionEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConfiguracionEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmObservaciones.Designer.vb">
+      <DependentUpon>frmObservaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmObservaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmObservacionesLlamada.Designer.vb">
+      <DependentUpon>frmObservacionesLlamada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmObservacionesLlamada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\WaitForm1.Designer.vb">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\WaitForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVisitas.Designer.vb">
+      <DependentUpon>frmVisitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmVisitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVisitasConcertadas.Designer.vb">
+      <DependentUpon>frmVisitasConcertadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmVisitasConcertadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscar.Designer.vb">
+      <DependentUpon>frmBuscar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuncionesGenerales\BaseDatos.vb" />
+    <Compile Include="Formularios\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuncionesGenerales\Actualizacion.vb" />
+    <Compile Include="FuncionesGenerales\MarcaAgua.vb" />
+    <Compile Include="FuncionesGenerales\CheckMarksSelection.vb" />
+    <Compile Include="FuncionesGenerales\ConsultasBaseDatos.vb" />
+    <Compile Include="FuncionesGenerales\encriptacion.vb" />
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuncionesGenerales\FuncionesEspecificas.vb" />
+    <Compile Include="FuncionesGenerales\FuncionesFTP.vb" />
+    <Compile Include="FuncionesGenerales\FuncionesGenerales.vb" />
+    <Compile Include="FuncionesGenerales\FuncionesGeneralesD.vb" />
+    <Compile Include="FuncionesGenerales\FuncionesMantenimiento.vb" />
+    <Compile Include="FuncionesGenerales\MapaGoogle.vb" />
+    <Compile Include="FuncionesMantenimiento2.vb" />
+    <Compile Include="Helpers\ColorHelper.vb" />
+    <Compile Include="Helpers\CustomCursorWrapper.vb" />
+    <Compile Include="Helpers\DataBindingHelpers.vb" />
+    <Compile Include="Helpers\DateTimeExtensions.vb" />
+    <Compile Include="Helpers\EnumExtensions.vb" />
+    <Compile Include="Helpers\FileHelpers.vb" />
+    <Compile Include="Helpers\FormsExtensions.vb" />
+    <Compile Include="Informes\rptFichaPropietario.Designer.vb">
+      <DependentUpon>rptFichaPropietario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptFichaPropietario.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptListado.Designer.vb">
+      <DependentUpon>rptListado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptListado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptListadoLlamadas.Designer.vb">
+      <DependentUpon>rptListadoLlamadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptListadoLlamadas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptEstadisticasEmpleadosGlobal.Designer.vb">
+      <DependentUpon>rptEstadisticasEmpleadosGlobal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptEstadisticasEmpleadosGlobal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptEstadisticasEmpleados.Designer.vb">
+      <DependentUpon>rptEstadisticasEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptEstadisticasEmpleados.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptListadoDireccionesInmuebles.Designer.vb">
+      <DependentUpon>rptListadoDireccionesInmuebles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptListadoDireccionesInmuebles.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptListadoFichaInmueble.Designer.vb">
+      <DependentUpon>rptListadoFichaInmueble.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptListadoFichaInmueble.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptEscaparate.Designer.vb">
+      <DependentUpon>rptEscaparate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptEscaparate.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptListadoInmuebles.Designer.vb">
+      <DependentUpon>rptListadoInmuebles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptListadoInmuebles.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptAlquilerInmueble.Designer.vb">
+      <DependentUpon>rptAlquilerInmueble.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptAlquilerInmueble.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptCompraInmueble.Designer.vb">
+      <DependentUpon>rptCompraInmueble.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptCompraInmueble.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\rptListadoVisitas.Designer.vb">
+      <DependentUpon>rptListadoVisitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\rptListadoVisitas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\AlbumGroupCaptionControl.Designer.vb">
+      <DependentUpon>AlbumGroupCaptionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AlbumGroupCaptionControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ClasesParaControlesDeUsuario.vb" />
+    <Compile Include="Modules\ControlesEspecificos\ucCambioPrecio.Designer.vb">
+      <DependentUpon>ucCambioPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucCambioPrecio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucMensajeEmail.Designer.vb">
+      <DependentUpon>ucMensajeEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucMensajeEmail.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tb_ButtonEdit.Designer.vb">
+      <DependentUpon>tb_ButtonEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tb_ButtonEdit.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tb_Label.Designer.vb">
+      <DependentUpon>tb_Label.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tb_Label.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\ucGasElectricidad.Designer.vb">
+      <DependentUpon>ucGasElectricidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\ucGasElectricidad.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_3Checks.Designer.vb">
+      <DependentUpon>uc_tb_3Checks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_3Checks.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_GasElectricidad.Designer.vb">
+      <DependentUpon>uc_tb_GasElectricidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_GasElectricidad.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_RadioGroup.Designer.vb">
+      <DependentUpon>uc_tb_RadioGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_RadioGroup.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SimpleButton.Designer.vb">
+      <DependentUpon>uc_tb_SimpleButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SimpleButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoIndiferente.Designer.vb">
+      <DependentUpon>uc_tb_SiNoIndiferente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoIndiferente.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SpinEdit.Designer.vb">
+      <DependentUpon>uc_tb_SpinEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SpinEdit.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucConfiguracion.Designer.vb">
+      <DependentUpon>ucConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucConfiguracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucEmailConfiguracion.Designer.vb">
+      <DependentUpon>ucEmailConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucEmailConfiguracion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucPropietarios.Designer.vb">
+      <DependentUpon>ucPropietarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucPropietarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucAlarmas.Designer.vb">
+      <DependentUpon>ucAlarmas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucAlarmas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Data.vb" />
+    <Compile Include="frmDatosBaseDeDatos.Designer.vb">
+      <DependentUpon>frmDatosBaseDeDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatosBaseDeDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConcertarCita.Designer.vb">
+      <DependentUpon>frmConcertarCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConcertarCita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\UcEmailMasivoClientes.Designer.vb">
+      <DependentUpon>UcEmailMasivoClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\UcEmailMasivoClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\ucEmpleados.Designer.vb">
+      <DependentUpon>ucEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\ucEmpleados.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\ucZonasComunes.Designer.vb">
+      <DependentUpon>ucZonasComunes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\ucZonasComunes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mensajes\ucBocadillo3.Designer.vb">
+      <DependentUpon>ucBocadillo3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mensajes\ucBocadillo3.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucClientesWeb.Designer.vb">
+      <DependentUpon>ucClientesWeb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucClientesWeb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcAgrupaciones.Designer.vb">
+      <DependentUpon>UcAgrupaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcAgrupaciones.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcComoConociste.Designer.vb">
+      <DependentUpon>UcComoConociste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcComoConociste.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcEstado.Designer.vb">
+      <DependentUpon>UcEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcEstado.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcOrientacion.Designer.vb">
+      <DependentUpon>UcOrientacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcOrientacion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcPoblacion.Designer.vb">
+      <DependentUpon>UcPoblacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcPoblacion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcProvincias.Designer.vb">
+      <DependentUpon>UcProvincias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcProvincias.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\ucTextosEnvios.Designer.vb">
+      <DependentUpon>ucTextosEnvios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\ucTextosEnvios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcTipo.Designer.vb">
+      <DependentUpon>UcTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcTipo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcZona.Designer.vb">
+      <DependentUpon>UcZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mantenimientos\UcZona.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Mensajes\frmTodosLosMensajes.designer.vb">
+      <DependentUpon>frmTodosLosMensajes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mensajes\frmTodosLosMensajes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Mensajes\FuncionesWebService.vb" />
+    <Compile Include="Modules\MenuRadial.vb" />
+    <Compile Include="Modules\MiMenuRadial.vb" />
+    <Compile Include="Modules\Module1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\PhotoGroupCaptionControlBase.Designer.vb">
+      <DependentUpon>PhotoGroupCaptionControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PhotoGroupCaptionControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ProgressControl.Designer.vb">
+      <DependentUpon>ProgressControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProgressControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ProgressForm.Designer.vb">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ProgressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ucConversaciones.Designer.vb">
+      <DependentUpon>ucConversaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ucConversaciones.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tbContextMenuStripComponent.Designer.vb">
+      <DependentUpon>tbContextMenuStripComponent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tbContextMenuStripComponent.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tbLookUPEdit.Designer.vb">
+      <DependentUpon>tbLookUPEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\tbLookUPEdit.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucInmueblesPropietario.Designer.vb">
+      <DependentUpon>ucInmueblesPropietario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucInmueblesPropietario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckBoxColor.Designer.vb">
+      <DependentUpon>uc_tb_CheckBoxColor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckBoxColor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckBoxColorConTextos.Designer.vb">
+      <DependentUpon>uc_tb_CheckBoxColorConTextos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckBoxColorConTextos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckBoxRojoNegro.Designer.vb">
+      <DependentUpon>uc_tb_CheckBoxRojoNegro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckBoxRojoNegro.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckDosNumeros.Designer.vb">
+      <DependentUpon>uc_tb_CheckDosNumeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckDosNumeros.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckUnNumero.Designer.vb">
+      <DependentUpon>uc_tb_CheckUnNumero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CheckUnNumero.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CombosCheck.Designer.vb">
+      <DependentUpon>uc_tb_CombosCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_CombosCheck.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\ucCopiarPerfiles.Designer.vb">
+      <DependentUpon>ucCopiarPerfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\ucCopiarPerfiles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\ucGestionDocumental.Designer.vb">
+      <DependentUpon>ucGestionDocumental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\ucGestionDocumental.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucInmuebles.Designer.vb">
+      <DependentUpon>ucInmuebles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucInmuebles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucMantenimientos.Designer.vb">
+      <DependentUpon>ucMantenimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucMantenimientos.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_GridControlDevExpress.Designer.vb">
+      <DependentUpon>uc_tb_GridControlDevExpress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_GridControlDevExpress.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_lst.Designer.vb">
+      <DependentUpon>uc_tb_lst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_lst.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_RadioSiNoIndiferente.Designer.vb">
+      <DependentUpon>uc_tb_RadioSiNoIndiferente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_RadioSiNoIndiferente.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucComunicacionesDetalle.Designer.vb">
+      <DependentUpon>ucComunicacionesDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesEspecificos\ucComunicacionesDetalle.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoDosNumeros.Designer.vb">
+      <DependentUpon>uc_tb_SiNoDosNumeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoDosNumeros.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoIndCheckDosNumeros.Designer.vb">
+      <DependentUpon>uc_tb_SiNoIndCheckDosNumeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoIndCheckDosNumeros.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoIndDosNumeros.Designer.vb">
+      <DependentUpon>uc_tb_SiNoIndDosNumeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoIndDosNumeros.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoUnNumero.Designer.vb">
+      <DependentUpon>uc_tb_SiNoUnNumero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ControlesGenerales\uc_tb_SiNoUnNumero.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FuncionesGenerales\SendMail.vb" />
+    <Compile Include="FuncionesGenerales\Tablas.vb" />
+    <Compile Include="FuncionesGenerales\VariablesGlobales.vb" />
+    <Compile Include="Program.vb" />
+    <Compile Include="Service References\WebServiceVenalia\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucImagenes.Designer.vb">
+      <DependentUpon>ucImagenes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucImagenes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucClientes.Designer.vb">
+      <DependentUpon>ucClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FormulariosPrincipales\ucClientes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SplashScreen2.Designer.vb">
+      <DependentUpon>SplashScreen2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm2.Designer.vb">
+      <DependentUpon>WaitForm2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.vb">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tbImputBox.Designer.vb">
+      <DependentUpon>tbImputBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tbImputBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Formularios\frmRed.resx">
+      <DependentUpon>frmRed.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmBuscador.resx">
+      <DependentUpon>frmBuscador.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmFechas.resx">
+      <DependentUpon>frmFechas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmIntroducirTextoMensaje.resx">
+      <DependentUpon>FrmIntroducirTextoMensaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmWordReport.resx">
+      <DependentUpon>frmWordReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListados.resx">
+      <DependentUpon>frmListados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEscaparate.resx">
+      <DependentUpon>frmEscaparate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmFichaReserva.resx">
+      <DependentUpon>frmFichaReserva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmFichaAlquiler.resx">
+      <DependentUpon>frmFichaAlquiler.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConfiguracionEmpresa.resx">
+      <DependentUpon>frmConfiguracionEmpresa.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmObservaciones.resx">
+      <DependentUpon>frmObservaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmObservacionesLlamada.resx">
+      <DependentUpon>frmObservacionesLlamada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\WaitForm1.resx">
+      <DependentUpon>WaitForm1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVisitas.resx">
+      <DependentUpon>frmVisitas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVisitasConcertadas.resx">
+      <DependentUpon>frmVisitasConcertadas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscar.resx">
+      <DependentUpon>frmBuscar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColoresGrid.resx">
+      <DependentUpon>frmColoresGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatosBaseDeDatos.resx">
+      <DependentUpon>frmDatosBaseDeDatos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTextoAEnviarSMS.resx">
+      <DependentUpon>frmTextoAEnviarSMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptFichaPropietario.resx">
+      <DependentUpon>rptFichaPropietario.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptListado.resx">
+      <DependentUpon>rptListado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptListadoLlamadas.resx">
+      <DependentUpon>rptListadoLlamadas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptEstadisticasEmpleadosGlobal.resx">
+      <DependentUpon>rptEstadisticasEmpleadosGlobal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptEstadisticasEmpleados.resx">
+      <DependentUpon>rptEstadisticasEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptListadoDireccionesInmuebles.resx">
+      <DependentUpon>rptListadoDireccionesInmuebles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptListadoFichaInmueble.resx">
+      <DependentUpon>rptListadoFichaInmueble.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptEscaparate.resx">
+      <DependentUpon>rptEscaparate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptListadoInmuebles.resx">
+      <DependentUpon>rptListadoInmuebles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptAlquilerInmueble.resx">
+      <DependentUpon>rptAlquilerInmueble.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptCompraInmueble.resx">
+      <DependentUpon>rptCompraInmueble.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptListadoVisitas.resx">
+      <DependentUpon>rptListadoVisitas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AlbumGroupCaptionControl.resx">
+      <DependentUpon>AlbumGroupCaptionControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConcertarCita.resx">
+      <DependentUpon>frmConcertarCita.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesEspecificos\ucCambioPrecio.resx">
+      <DependentUpon>ucCambioPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesEspecificos\ucMensajeEmail.resx">
+      <DependentUpon>ucMensajeEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\ucGasElectricidad.resx">
+      <DependentUpon>ucGasElectricidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_3Checks.resx">
+      <DependentUpon>uc_tb_3Checks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_GasElectricidad.resx">
+      <DependentUpon>uc_tb_GasElectricidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_SiNoIndiferente.resx">
+      <DependentUpon>uc_tb_SiNoIndiferente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucConfiguracion.resx">
+      <DependentUpon>ucConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucEmailConfiguracion.resx">
+      <DependentUpon>ucEmailConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucPropietarios.resx">
+      <DependentUpon>ucPropietarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucAlarmas.resx">
+      <DependentUpon>ucAlarmas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\UcEmailMasivoClientes.resx">
+      <DependentUpon>UcEmailMasivoClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\ucEmpleados.resx">
+      <DependentUpon>ucEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\ucZonasComunes.resx">
+      <DependentUpon>ucZonasComunes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mensajes\ucBocadillo3.resx">
+      <DependentUpon>ucBocadillo3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucClientesWeb.resx">
+      <DependentUpon>ucClientesWeb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcAgrupaciones.resx">
+      <DependentUpon>UcAgrupaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcComoConociste.resx">
+      <DependentUpon>UcComoConociste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcEstado.resx">
+      <DependentUpon>UcEstado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcOrientacion.resx">
+      <DependentUpon>UcOrientacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcPoblacion.resx">
+      <DependentUpon>UcPoblacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcProvincias.resx">
+      <DependentUpon>UcProvincias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\ucTextosEnvios.resx">
+      <DependentUpon>ucTextosEnvios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcTipo.resx">
+      <DependentUpon>UcTipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mantenimientos\UcZona.resx">
+      <DependentUpon>UcZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Mensajes\frmTodosLosMensajes.resx">
+      <DependentUpon>frmTodosLosMensajes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PhotoGroupCaptionControlBase.resx">
+      <DependentUpon>PhotoGroupCaptionControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProgressControl.resx">
+      <DependentUpon>ProgressControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ProgressForm.resx">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ucConversaciones.resx">
+      <DependentUpon>ucConversaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesEspecificos\ucInmueblesPropietario.resx">
+      <DependentUpon>ucInmueblesPropietario.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\ucCopiarPerfiles.resx">
+      <DependentUpon>ucCopiarPerfiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\ucGestionDocumental.resx">
+      <DependentUpon>ucGestionDocumental.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucInmuebles.resx">
+      <DependentUpon>ucInmuebles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucMantenimientos.resx">
+      <DependentUpon>ucMantenimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_CheckDosNumeros.resx">
+      <DependentUpon>uc_tb_CheckDosNumeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_CheckUnNumero.resx">
+      <DependentUpon>uc_tb_CheckUnNumero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_RadioSiNoIndiferente.resx">
+      <DependentUpon>uc_tb_RadioSiNoIndiferente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesEspecificos\ucComunicacionesDetalle.resx">
+      <DependentUpon>ucComunicacionesDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_SiNoDosNumeros.resx">
+      <DependentUpon>uc_tb_SiNoDosNumeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_SiNoIndCheckDosNumeros.resx">
+      <DependentUpon>uc_tb_SiNoIndCheckDosNumeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_SiNoIndDosNumeros.resx">
+      <DependentUpon>uc_tb_SiNoIndDosNumeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ControlesGenerales\uc_tb_SiNoUnNumero.resx">
+      <DependentUpon>uc_tb_SiNoUnNumero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen2.resx">
+      <DependentUpon>SplashScreen2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tbImputBox.resx">
+      <DependentUpon>tbImputBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucImagenes.resx">
+      <DependentUpon>ucImagenes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\FormulariosPrincipales\ucClientes.resx">
+      <DependentUpon>ucClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm2.resx">
+      <DependentUpon>WaitForm2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clAlertas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clBanos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clDatosDeUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clDatosInmobiliaria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clDatosMapa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clEstados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clFiltrosBusqueda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clHabitaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clInmueblesDetalle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clInmueblesListado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clMensajes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clOfertas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clPoblaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clPrecios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clResultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clTamanos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clTipoInmueble.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.clZonas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.wsdl" />
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SkinData\metroblack.blob" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Escaparate.png" />
+    <None Include="Resources\TresBits.ico" />
+    <None Include="Resources\WEB.png" />
+    <None Include="Resources\First.png" />
+    <None Include="Resources\Euro.png" />
+    <None Include="Resources\Multiple.png" />
+    <None Include="Resources\Visitasnew.png" />
+    <None Include="Resources\Mesa.png" />
+    <None Include="Resources\Revista2.png" />
+    <None Include="Resources\Direcciones.png" />
+    <None Include="Resources\Estadisticas.png" />
+    <None Include="Resources\Word32.png" />
+    <None Include="Resources\Duplicar.png" />
+    <None Include="Resources\NuevoInmueble.png" />
+    <None Include="Resources\ListadoLlamadas.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\nisinino.png" />
+    <None Include="Resources\nosel.png" />
+    <None Include="Resources\sel.png" />
+    <None Include="Resources\Exit1.png" />
+    <None Include="Resources\icono.ico" />
+    <None Include="Resources\QuitarBusqueda.png" />
+    <None Include="Resources\check1.png" />
+    <None Include="Resources\desconexion-de-salida-icono-7025-641.png" />
+    <None Include="Resources\cancel1.png" />
+    <None Include="Resources\Editar.png" />
+    <None Include="Resources\AnadirCliente48.png" />
+    <None Include="Resources\Eliminar1.png" />
+    <None Include="Resources\AnadirInmueble.png" />
+    <None Include="Resources\Add-New.png" />
+    <None Include="Resources\Reserva.png" />
+    <None Include="Resources\Reserva32.png" />
+    <None Include="Resources\copiaseguridad.png" />
+    <Content Include="Resources\enviar.png" />
+    <None Include="Resources\imagenes.png" />
+    <Content Include="Resources\verenvios.png" />
+    <None Include="Service References\WebServiceVenalia\WebServiceVenalia.disco" />
+    <None Include="Service References\WebServiceVenalia\configuration91.svcinfo" />
+    <None Include="Service References\WebServiceVenalia\configuration.svcinfo" />
+    <None Include="Service References\WebServiceVenalia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Venalia.ico" />
+    <None Include="Resources\ImprimirBoton.png" />
+    <None Include="Resources\DuplicarDocumento.png" />
+    <None Include="Resources\EliminarDocumento.png" />
+    <None Include="Resources\NuevoDocumento.png" />
+    <None Include="Resources\AprobarDocumento.png" />
+    <None Include="Resources\BuscarDocumento.png" />
+    <None Include="Resources\Derecha.png" />
+    <None Include="Resources\Izquierda.png" />
+    <None Include="Resources\PresupuestosBoton.png" />
+    <None Include="Resources\kubik.png" />
+    <None Include="Resources\KubiK.ico" />
+    <None Include="Resources\Pedidos.png" />
+    <None Include="Resources\Riesgo.png" />
+    <None Include="Resources\caja.png" />
+    <None Include="Resources\Vendedores.png" />
+    <None Include="Resources\fotos.png" />
+    <None Include="Resources\Igis.ico" />
+    <Content Include="Imges\arrow_left_icon.png" />
+    <Content Include="Imges\arrow_right_icon.png" />
+    <Content Include="Imges\back_button_slightly_larger.png" />
+    <None Include="Resources\visitas.png" />
+    <None Include="Resources\DarDeAlta.png" />
+    <None Include="Resources\DarDeBaja.png" />
+    <None Include="Resources\inmueblesBoton.png" />
+    <None Include="Resources\VerAltas.png" />
+    <None Include="Resources\VerBajas.png" />
+    <None Include="Resources\NoContesta.png" />
+    <None Include="Resources\Estilos.png" />
+    <None Include="Resources\Configuracion.png" />
+    <None Include="Resources\Observaciones.png" />
+    <None Include="Resources\DatosPropietarios.png" />
+    <None Include="Resources\llamadas1.png" />
+    <None Include="Resources\Llamadas.png" />
+    <None Include="Resources\BajasClientes.png" />
+    <None Include="Resources\Clientes1.png" />
+    <None Include="Resources\ClientesAlta.png" />
+    <None Include="Resources\InmueblesAlta.png" />
+    <None Include="Resources\InmueblesBaja.png" />
+    <None Include="Resources\ClientesBaja.png" />
+    <None Include="Resources\Clientes32x32.png" />
+    <None Include="Resources\Inmuebles32x32.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Predeterminar.png" />
+    <None Include="Resources\SubirAWeb.png" />
+    <None Include="Resources\PC.png" />
+    <None Include="Resources\aPublicar.png" />
+    <None Include="Resources\toWEB.png" />
+    <None Include="Resources\empty.png" />
+    <None Include="Resources\Reservar.png" />
+    <Content Include="SkinData\metroblack.skin.xml" />
+    <None Include="Resources\Word.png" />
+    <None Include="Resources\vert24.png" />
+    <None Include="Resources\Vert.png" />
+    <None Include="Resources\Vencimientos.png" />
+    <None Include="Resources\SaveAll_32x32.png" />
+    <None Include="Resources\SaveAll_16x16.png" />
+    <None Include="Resources\Save_32x32.png" />
+    <None Include="Resources\Save_16x16.png" />
+    <None Include="Resources\SalirRojo2.png" />
+    <None Include="Resources\Salir.png" />
+    <None Include="Resources\Print_32x32.png" />
+    <None Include="Resources\Print_16x16.png" />
+    <None Include="Resources\Preventas.png" />
+    <None Include="Resources\Presupuestos.png" />
+    <None Include="Resources\PDF.png" />
+    <None Include="Resources\Paste_32x32.png" />
+    <None Include="Resources\Paste_16x16.png" />
+    <None Include="Resources\Open_32x32.png" />
+    <None Include="Resources\Open_16x16.png" />
+    <None Include="Resources\Modificar.png" />
+    <None Include="Resources\Marcas.png" />
+    <None Include="Resources\Mail.png" />
+    <None Include="Resources\Imprimir.png" />
+    <None Include="Resources\FormasPago.png" />
+    <None Include="Resources\Familias.png" />
+    <None Include="Resources\Facturas.png" />
+    <None Include="Resources\Excel.png" />
+    <None Include="Resources\Empleados.png" />
+    <None Include="Resources\EmailBoton.png" />
+    <None Include="Resources\Eliminar.png" />
+    <None Include="Resources\Edit_32x32.png" />
+    <None Include="Resources\Edit_16x16.png" />
+    <None Include="Resources\Aceptar.png" />
+    <None Include="Resources\acrobatreader.png" />
+    <None Include="Resources\Albaranes.png" />
+    <None Include="Resources\Almacenes.png" />
+    <None Include="Resources\Anadir.png" />
+    <None Include="Resources\Articulos.png" />
+    <None Include="Resources\Buscar.png" />
+    <None Include="Resources\Cancelar.png" />
+    <None Include="Resources\Close_16x16.png" />
+    <None Include="Resources\Close_32x32.png" />
+    <None Include="Resources\Configurar.png" />
+    <None Include="Resources\Copy_16x16.png" />
+    <None Include="Resources\Copy_32x32.png" />
+    <None Include="Resources\Cut_16x16.png" />
+    <None Include="Resources\Cut_32x32.png" />
+    <None Include="Resources\Delete_16x16.png" />
+    <None Include="Resources\Delete_32x32.png" />
+    <None Include="Resources\Barcode.png" />
+    <None Include="Resources\Barcode.jpeg" />
+    <None Include="Resources\Clientes.png" />
+    <Content Include="Resources\DiputacionValencia.png" />
+    <None Include="Resources\DiputacionValencia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dlls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WebServiceVenalia\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

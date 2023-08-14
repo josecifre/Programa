@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebServiceUIMApp" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://uim.tresbits.es/WebServiceUIMApp.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://uim.tresbits.es/WebServiceUIMApp.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://uim.tresbits.es/WebServiceUIMApp.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" />
+      <xsd:import schemaLocation="http://uim.tresbits.es/WebServiceUIMApp.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebServiceUIMApp_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_SoyFacil_InputMessage">
+    <wsdl:part name="parameters" element="tns:SoyFacil" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_SoyFacil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SoyFacilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_SoyFacil_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q1:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ValidarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ValidarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ValidarUsuario_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q2:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_AltaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AltaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_AltaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AltaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_AltaUsuario_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q3:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_InsertarEliminarFavorito_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEliminarFavorito" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_InsertarEliminarFavorito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEliminarFavoritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_InsertarEliminarFavorito_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q4:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerDatosInmobiliaria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosInmobiliaria" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerDatosInmobiliaria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosInmobiliariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerDatosInmobiliaria_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q5:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFavoritos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFavoritos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFavoritos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFavoritosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFavoritos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q6:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusqueda_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusqueda" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusqueda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusqueda_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q7:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaParaDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaParaDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaParaDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaParaDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaParaDetalle_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q8:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_CuantosInmuebles_InputMessage">
+    <wsdl:part name="parameters" element="tns:CuantosInmuebles" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_CuantosInmuebles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CuantosInmueblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_CuantosInmuebles_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q9:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaSinPaginacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaSinPaginacion" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaSinPaginacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaSinPaginacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaSinPaginacion_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q10:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaConTodosLosCampos_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaConTodosLosCampos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaConTodosLosCampos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaConTodosLosCamposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaConTodosLosCampos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q11:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerDetalleInmueble_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleInmueble" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerDetalleInmueble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleInmuebleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerDetalleInmueble_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q12:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosInmuebles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosInmuebles" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosInmuebles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosInmueblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosInmuebles_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q13:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosInmueblesConTodosLosCampos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosInmueblesConTodosLosCampos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosInmueblesConTodosLosCampos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosInmueblesConTodosLosCamposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosInmueblesConTodosLosCampos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q14:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosUsuarios_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q15:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosDispositivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosDispositivos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosDispositivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosDispositivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerTodosLosDispositivos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q16:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEstados" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaEstados_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q17:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPoblaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoblaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPoblaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoblacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPoblaciones_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q18:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaTamanos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTamanos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaTamanos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTamanosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaTamanos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q19:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPrecios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPrecios" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPrecios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPreciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPrecios_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q20:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaOfertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaOfertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaOfertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaOfertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaOfertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q21:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaTipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTipo" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaTipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaTipo_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q22:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaZonas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaZonas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q23:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaHabitaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaHabitaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaHabitaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaHabitacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaHabitaciones_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q24:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaBanos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaBanos" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaBanos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaBanosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaBanos_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q25:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q26:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EliminarAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EliminarAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EliminarAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q27:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_InsertarAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_InsertarAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_InsertarAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q28:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFiltrosAlertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosAlertas" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFiltrosAlertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosAlertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFiltrosAlertas_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q29:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFiltrosUltimaBusqueda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosUltimaBusqueda" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFiltrosUltimaBusqueda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFiltrosUltimaBusquedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerFiltrosUltimaBusqueda_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q30:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_QuitarDispositivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuitarDispositivo" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_QuitarDispositivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuitarDispositivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_QuitarDispositivo_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q31:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerClave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClave" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerClave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerClave_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q32:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNombre" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerNombre_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q33:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaPorMapa_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaPorMapa" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaPorMapa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HacerBusquedaPorMapaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_HacerBusquedaPorMapa_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q34:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EnviarNotificaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarNotificaciones" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EnviarNotificaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarNotificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EnviarNotificaciones_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q35:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EscribirMensaje3_InputMessage">
+    <wsdl:part name="parameters" element="tns:EscribirMensaje3" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EscribirMensaje3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EscribirMensaje3Response" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_EscribirMensaje3_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q36:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerMensajes3_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMensajes3" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerMensajes3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMensajes3Response" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ObtenerMensajes3_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q37:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_BorrarMensajesDescargados_v3_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarMensajesDescargados_v3" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_BorrarMensajesDescargados_v3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarMensajesDescargados_v3Response" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_BorrarMensajesDescargados_v3_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q38:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_DarBajaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DarBajaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_DarBajaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DarBajaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_DarBajaUsuario_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q39:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_CuantosSinFiltros_InputMessage">
+    <wsdl:part name="parameters" element="tns:CuantosSinFiltros" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_CuantosSinFiltros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CuantosSinFiltrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_CuantosSinFiltros_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q40:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPoblacionesDeInmuebles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoblacionesDeInmuebles" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPoblacionesDeInmuebles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoblacionesDeInmueblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaPoblacionesDeInmuebles_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q41:clResultado" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaConTodoConTexto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaConTodoConTexto" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaConTodoConTexto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaConTodoConTextoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceUIMApp_ListaConTodoConTexto_clResultadoFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/WebServiceUIMApp" name="detail" element="q42:clResultado" />
+  </wsdl:message>
+  <wsdl:portType name="IWebServiceUIMApp">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/GetData" message="tns:IWebServiceUIMApp_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/GetDataResponse" message="tns:IWebServiceUIMApp_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/GetDataUsingDataContract" message="tns:IWebServiceUIMApp_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/GetDataUsingDataContractResponse" message="tns:IWebServiceUIMApp_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SoyFacil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/SoyFacil" message="tns:IWebServiceUIMApp_SoyFacil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/SoyFacilResponse" message="tns:IWebServiceUIMApp_SoyFacil_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/SoyFacilclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_SoyFacil_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ValidarUsuario" message="tns:IWebServiceUIMApp_ValidarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ValidarUsuarioResponse" message="tns:IWebServiceUIMApp_ValidarUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ValidarUsuarioclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ValidarUsuario_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/AltaUsuario" message="tns:IWebServiceUIMApp_AltaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/AltaUsuarioResponse" message="tns:IWebServiceUIMApp_AltaUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/AltaUsuarioclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_AltaUsuario_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEliminarFavorito">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/InsertarEliminarFavorito" message="tns:IWebServiceUIMApp_InsertarEliminarFavorito_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/InsertarEliminarFavoritoResponse" message="tns:IWebServiceUIMApp_InsertarEliminarFavorito_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/InsertarEliminarFavoritoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_InsertarEliminarFavorito_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosInmobiliaria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerDatosInmobiliaria" message="tns:IWebServiceUIMApp_ObtenerDatosInmobiliaria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerDatosInmobiliariaResponse" message="tns:IWebServiceUIMApp_ObtenerDatosInmobiliaria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerDatosInmobiliariaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerDatosInmobiliaria_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFavoritos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFavoritos" message="tns:IWebServiceUIMApp_ObtenerFavoritos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFavoritosResponse" message="tns:IWebServiceUIMApp_ObtenerFavoritos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFavoritosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerFavoritos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusqueda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusqueda" message="tns:IWebServiceUIMApp_HacerBusqueda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaResponse" message="tns:IWebServiceUIMApp_HacerBusqueda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_HacerBusqueda_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaParaDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaParaDetalle" message="tns:IWebServiceUIMApp_HacerBusquedaParaDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaParaDetalleResponse" message="tns:IWebServiceUIMApp_HacerBusquedaParaDetalle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaParaDetalleclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_HacerBusquedaParaDetalle_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CuantosInmuebles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/CuantosInmuebles" message="tns:IWebServiceUIMApp_CuantosInmuebles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/CuantosInmueblesResponse" message="tns:IWebServiceUIMApp_CuantosInmuebles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/CuantosInmueblesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_CuantosInmuebles_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaSinPaginacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaSinPaginacion" message="tns:IWebServiceUIMApp_HacerBusquedaSinPaginacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaSinPaginacionResponse" message="tns:IWebServiceUIMApp_HacerBusquedaSinPaginacion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaSinPaginacionclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_HacerBusquedaSinPaginacion_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaConTodosLosCampos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaConTodosLosCampos" message="tns:IWebServiceUIMApp_HacerBusquedaConTodosLosCampos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaConTodosLosCamposResponse" message="tns:IWebServiceUIMApp_HacerBusquedaConTodosLosCampos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaConTodosLosCamposclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_HacerBusquedaConTodosLosCampos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleInmueble">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerDetalleInmueble" message="tns:IWebServiceUIMApp_ObtenerDetalleInmueble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerDetalleInmuebleResponse" message="tns:IWebServiceUIMApp_ObtenerDetalleInmueble_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerDetalleInmuebleclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerDetalleInmueble_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosInmuebles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmuebles" message="tns:IWebServiceUIMApp_ObtenerTodosLosInmuebles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmueblesResponse" message="tns:IWebServiceUIMApp_ObtenerTodosLosInmuebles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmueblesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerTodosLosInmuebles_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosInmueblesConTodosLosCampos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmueblesConTodosLosCampos" message="tns:IWebServiceUIMApp_ObtenerTodosLosInmueblesConTodosLosCampos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmueblesConTodosLosCamposResponse" message="tns:IWebServiceUIMApp_ObtenerTodosLosInmueblesConTodosLosCampos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmueblesConTodosLosCamposclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerTodosLosInmueblesConTodosLosCampos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosUsuarios" message="tns:IWebServiceUIMApp_ObtenerTodosLosUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosUsuariosResponse" message="tns:IWebServiceUIMApp_ObtenerTodosLosUsuarios_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosUsuariosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerTodosLosUsuarios_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosDispositivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosDispositivos" message="tns:IWebServiceUIMApp_ObtenerTodosLosDispositivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosDispositivosResponse" message="tns:IWebServiceUIMApp_ObtenerTodosLosDispositivos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosDispositivosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerTodosLosDispositivos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaEstados" message="tns:IWebServiceUIMApp_ListaEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaEstadosResponse" message="tns:IWebServiceUIMApp_ListaEstados_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaEstadosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaEstados_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoblaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPoblaciones" message="tns:IWebServiceUIMApp_ListaPoblaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPoblacionesResponse" message="tns:IWebServiceUIMApp_ListaPoblaciones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPoblacionesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaPoblaciones_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTamanos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaTamanos" message="tns:IWebServiceUIMApp_ListaTamanos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaTamanosResponse" message="tns:IWebServiceUIMApp_ListaTamanos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaTamanosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaTamanos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrecios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPrecios" message="tns:IWebServiceUIMApp_ListaPrecios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPreciosResponse" message="tns:IWebServiceUIMApp_ListaPrecios_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPreciosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaPrecios_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaOfertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaOfertas" message="tns:IWebServiceUIMApp_ListaOfertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaOfertasResponse" message="tns:IWebServiceUIMApp_ListaOfertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaOfertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaOfertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaTipo" message="tns:IWebServiceUIMApp_ListaTipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaTipoResponse" message="tns:IWebServiceUIMApp_ListaTipo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaTipoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaTipo_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaZonas" message="tns:IWebServiceUIMApp_ListaZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaZonasResponse" message="tns:IWebServiceUIMApp_ListaZonas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaZonasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaZonas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaHabitaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaHabitaciones" message="tns:IWebServiceUIMApp_ListaHabitaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaHabitacionesResponse" message="tns:IWebServiceUIMApp_ListaHabitaciones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaHabitacionesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaHabitaciones_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBanos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaBanos" message="tns:IWebServiceUIMApp_ListaBanos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaBanosResponse" message="tns:IWebServiceUIMApp_ListaBanos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaBanosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaBanos_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerAlertas" message="tns:IWebServiceUIMApp_ObtenerAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerAlertasResponse" message="tns:IWebServiceUIMApp_ObtenerAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EliminarAlertas" message="tns:IWebServiceUIMApp_EliminarAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EliminarAlertasResponse" message="tns:IWebServiceUIMApp_EliminarAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EliminarAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_EliminarAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/InsertarAlertas" message="tns:IWebServiceUIMApp_InsertarAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/InsertarAlertasResponse" message="tns:IWebServiceUIMApp_InsertarAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/InsertarAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_InsertarAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosAlertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosAlertas" message="tns:IWebServiceUIMApp_ObtenerFiltrosAlertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosAlertasResponse" message="tns:IWebServiceUIMApp_ObtenerFiltrosAlertas_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosAlertasclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerFiltrosAlertas_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosUltimaBusqueda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosUltimaBusqueda" message="tns:IWebServiceUIMApp_ObtenerFiltrosUltimaBusqueda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosUltimaBusquedaResponse" message="tns:IWebServiceUIMApp_ObtenerFiltrosUltimaBusqueda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosUltimaBusquedaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerFiltrosUltimaBusqueda_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuitarDispositivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/QuitarDispositivo" message="tns:IWebServiceUIMApp_QuitarDispositivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/QuitarDispositivoResponse" message="tns:IWebServiceUIMApp_QuitarDispositivo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/QuitarDispositivoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_QuitarDispositivo_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerClave" message="tns:IWebServiceUIMApp_ObtenerClave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerClaveResponse" message="tns:IWebServiceUIMApp_ObtenerClave_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerClaveclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerClave_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerNombre" message="tns:IWebServiceUIMApp_ObtenerNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerNombreResponse" message="tns:IWebServiceUIMApp_ObtenerNombre_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerNombreclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerNombre_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaPorMapa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaPorMapa" message="tns:IWebServiceUIMApp_HacerBusquedaPorMapa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaPorMapaResponse" message="tns:IWebServiceUIMApp_HacerBusquedaPorMapa_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaPorMapaclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_HacerBusquedaPorMapa_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarNotificaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EnviarNotificaciones" message="tns:IWebServiceUIMApp_EnviarNotificaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EnviarNotificacionesResponse" message="tns:IWebServiceUIMApp_EnviarNotificaciones_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EnviarNotificacionesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_EnviarNotificaciones_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EscribirMensaje3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EscribirMensaje3" message="tns:IWebServiceUIMApp_EscribirMensaje3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EscribirMensaje3Response" message="tns:IWebServiceUIMApp_EscribirMensaje3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/EscribirMensaje3clResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_EscribirMensaje3_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMensajes3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerMensajes3" message="tns:IWebServiceUIMApp_ObtenerMensajes3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerMensajes3Response" message="tns:IWebServiceUIMApp_ObtenerMensajes3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ObtenerMensajes3clResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ObtenerMensajes3_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarMensajesDescargados_v3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/BorrarMensajesDescargados_v3" message="tns:IWebServiceUIMApp_BorrarMensajesDescargados_v3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/BorrarMensajesDescargados_v3Response" message="tns:IWebServiceUIMApp_BorrarMensajesDescargados_v3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/BorrarMensajesDescargados_v3clResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_BorrarMensajesDescargados_v3_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DarBajaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/DarBajaUsuario" message="tns:IWebServiceUIMApp_DarBajaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/DarBajaUsuarioResponse" message="tns:IWebServiceUIMApp_DarBajaUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/DarBajaUsuarioclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_DarBajaUsuario_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CuantosSinFiltros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/CuantosSinFiltros" message="tns:IWebServiceUIMApp_CuantosSinFiltros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/CuantosSinFiltrosResponse" message="tns:IWebServiceUIMApp_CuantosSinFiltros_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/CuantosSinFiltrosclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_CuantosSinFiltros_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoblacionesDeInmuebles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPoblacionesDeInmuebles" message="tns:IWebServiceUIMApp_ListaPoblacionesDeInmuebles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPoblacionesDeInmueblesResponse" message="tns:IWebServiceUIMApp_ListaPoblacionesDeInmuebles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaPoblacionesDeInmueblesclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaPoblacionesDeInmuebles_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaConTodoConTexto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaConTodoConTexto" message="tns:IWebServiceUIMApp_ListaConTodoConTexto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaConTodoConTextoResponse" message="tns:IWebServiceUIMApp_ListaConTodoConTexto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWebServiceUIMApp/ListaConTodoConTextoclResultadoFault" name="clResultadoFault" message="tns:IWebServiceUIMApp_ListaConTodoConTexto_clResultadoFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWebServiceUIMApp" type="tns:IWebServiceUIMApp">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoyFacil">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/SoyFacil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AltaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/AltaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEliminarFavorito">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/InsertarEliminarFavorito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosInmobiliaria">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerDatosInmobiliaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFavoritos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerFavoritos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusqueda">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/HacerBusqueda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaParaDetalle">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaParaDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CuantosInmuebles">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/CuantosInmuebles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaSinPaginacion">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaSinPaginacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaConTodosLosCampos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaConTodosLosCampos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleInmueble">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerDetalleInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosInmuebles">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmuebles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosInmueblesConTodosLosCampos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosInmueblesConTodosLosCampos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosDispositivos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerTodosLosDispositivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaEstados">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoblaciones">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaPoblaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTamanos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaTamanos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrecios">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaPrecios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaOfertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaOfertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTipo">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaZonas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaHabitaciones">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaHabitaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBanos">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaBanos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/EliminarAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/InsertarAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosAlertas">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosAlertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFiltrosUltimaBusqueda">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerFiltrosUltimaBusqueda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QuitarDispositivo">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/QuitarDispositivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClave">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNombre">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HacerBusquedaPorMapa">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/HacerBusquedaPorMapa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarNotificaciones">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/EnviarNotificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EscribirMensaje3">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/EscribirMensaje3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMensajes3">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ObtenerMensajes3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarMensajesDescargados_v3">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/BorrarMensajesDescargados_v3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DarBajaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/DarBajaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CuantosSinFiltros">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/CuantosSinFiltros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoblacionesDeInmuebles">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaPoblacionesDeInmuebles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaConTodoConTexto">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceUIMApp/ListaConTodoConTexto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clResultadoFault">
+        <soap:fault use="literal" name="clResultadoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceUIMApp">
+    <wsdl:port name="BasicHttpBinding_IWebServiceUIMApp" binding="tns:BasicHttpBinding_IWebServiceUIMApp">
+      <soap:address location="http://uim.tresbits.es/WebServiceUIMApp.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
