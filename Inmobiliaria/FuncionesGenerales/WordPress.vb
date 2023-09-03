@@ -163,7 +163,16 @@ Module WordPress
 
             'GL_ConfiguracionWeb.API_WP = "https://inmobiliariauim.com/wp-json/wp/v2/"
 
-            Dim client = New RestClient(GL_ConfiguracionWeb.API_WP & Funcion)
+            Dim urlLlamda As String
+            'If DatosEmpresa.Codigo = 2 Then
+            '    urlLlamda = GL_ConfiguracionWeb.API_WP.Replace("/wp-json", "/index.php/wp-json")
+            'Else
+            '    urlLlamda = GL_ConfiguracionWeb.API_WP
+            'End If
+
+            urlLlamda = GL_ConfiguracionWeb.API_WP
+
+            Dim client = New RestClient(urlLlamda & Funcion)
             'GL_TokenWP = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcHJ1ZWJhc2lubW9iaWxpYXJpYXMudHJlc2JpdHMuZXMiLCJpYXQiOjE1OTUxNTU0MTEsIm5iZiI6MTU5NTE1NTQxMSwiZXhwIjoxNTk1NzYwMjExLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.VYvvcryo_Jes6hRle_VviVoQV841VI0eBdilnYbeBb4"
             request.AddHeader("Authorization", "Bearer " + GL_TokenWP)
             'If Funcion.ToUpper = "MEDIA" Then
@@ -222,20 +231,52 @@ Module WordPress
 
 
     End Function
+    Public Function AceptarTodosLosCertificados(ByVal sender As Object, ByVal certification As System.Security.Cryptography.X509Certificates.X509Certificate, ByVal chain As System.Security.Cryptography.X509Certificates.X509Chain, ByVal sslPolicyErrors As System.Net.Security.SslPolicyErrors) As Boolean
+        Return True
+    End Function
+
     Private Function WordPressObtenerToken() As Tablas.clResultado
 
         Dim Res As New Tablas.clResultado
 
         Try
+
+
             'GL_ConfiguracionWeb.Web = "https://www.invinja.es"
             'GL_ConfiguracionWeb.Web = "https://inmobiliariauim.com"
+            'GL_ConfiguracionWeb.Web = "https://inmobiliariauim.com/index.php"
+            'GL_ConfiguracionWeb.Web = "http://185.195.96.50:8080"
+            'GL_ConfiguracionWeb.Web = "https://elastic-zhukovsky.82-223-64-23.plesk.page"
             System.Net.ServicePointManager.SecurityProtocol = Net.SecurityProtocolType.Tls12 Or Net.SecurityProtocolType.Tls11 Or Net.SecurityProtocolType.Tls
-            Dim client = New RestClient(GL_ConfiguracionWeb.Web & "/wp-json/jwt-auth/v1/token?username=" & GL_ConfiguracionWeb.Usuario & "&password=" & GL_ConfiguracionWeb.Pass)
-            Dim request As RestRequest
-            request = New RestRequest(Method.[POST])
+            'System.Net.ServicePointManager.SecurityProtocol = Net.SecurityProtocolType.SystemDefault
 
-            'request.AddHeader("Authorization", "Token " + GL_TokenWP)
-            request.AddHeader("content-type", "application/json")
+
+            'System.Net.ServicePointManager.ServerCertificateValidationCallback = New System.Net.Security.RemoteCertificateValidationCallback(AddressOf AceptarTodosLosCertificados)
+            Dim urlLlamda As String
+            If DatosEmpresa.Codigo = 2 Then
+                urlLlamda = GL_ConfiguracionWeb.Web & "/index.php/wp-json/jwt-auth/v1/token?username=" & GL_ConfiguracionWeb.Usuario & "&password=" & GL_ConfiguracionWeb.Pass
+            Else
+                urlLlamda = GL_ConfiguracionWeb.Web & "/wp-json/jwt-auth/v1/token?username=" & GL_ConfiguracionWeb.Usuario & "&password=" & GL_ConfiguracionWeb.Pass
+            End If
+
+            Dim client = New RestClient(urlLlamda)
+
+            'Dim client = New RestClient(GL_ConfiguracionWeb.Web)
+            Dim request As RestRequest
+            request = New RestRequest(Method.POST)
+
+            'request.AddHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2lubW9iaWxpYXJpYXVpbS5jb20iLCJpYXQiOjE2OTI4NjMwMDksIm5iZiI6MTY5Mjg2MzAwOSwiZXhwIjoxNjkzNDY3ODA5LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.e5a2ikqwD3ug1yNjLlRXfLmcR6m-HWLkIck56J7gdnA")
+            request.AddHeader("Content-Type", "application/json")
+            'request.AddHeader("Host", "inmobiliariauim.com")
+            'request.AddHeader("Host", "185.195.96.50")
+            'request.AddHeader("Cache-Control", "no-cache")
+
+            'request.AddHeader("User-Agent", "PostmanRuntime/7.32.3")
+            'request.AddHeader("Accept", "application/json")
+            'request.AddHeader("Cache-Control", "no-cache")
+            'request.AddHeader("Content-Type", "application/x-www-form-urlencoded")
+
+
             'If PostData <> "" Then
             '    request.AddParameter("application/json", PostData, ParameterType.RequestBody)
             'End If
@@ -533,13 +574,14 @@ Module WordPress
                 TokenWP = ""
 
             End If
+            'TokenWP = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2lubW9iaWxpYXJpYXVpbS5jb20iLCJpYXQiOjE2OTI4MTQ0NDIsIm5iZiI6MTY5MjgxNDQ0MiwiZXhwIjoxNjkzNDE5MjQyLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.iJTBz0W0IQoEKWmzXTdypgWSbV_-uAro-JlCCBpc9UM"
         End If
 
         Return TokenWP
 
     End Function
 
-    Private Function WP_ObtenerListaDetails(Inmueble As WebServiceVenalia.clInmueblesAlta) As Tablas.cl_wp_REALHOMESAdditionalDetails
+    Private Function WP_ObtenerListaDetails(Inmueble As Tablas.clInmueblesAlta) As Tablas.cl_wp_REALHOMESAdditionalDetails
 
 
         Dim wp_REALHOMESAdditionalDetails2 As New Tablas.cl_wp_REALHOMESAdditionalDetails
@@ -600,7 +642,7 @@ Module WordPress
         Return wp_REALHOMESAdditionalDetails2
     End Function
 
-    Private Function WP_ObtenerListaPrestaciones(Inmueble As WebServiceVenalia.clInmueblesAlta) As List(Of Integer)
+    Private Function WP_ObtenerListaPrestaciones(Inmueble As Tablas.clInmueblesAlta) As List(Of Integer)
 
 
         Dim ListaPropos As New List(Of Integer)
@@ -655,7 +697,6 @@ Module WordPress
                         End If
                     Else
                         ListaPropos.Add(dtPrestaciones.Rows(i)("Id_WP"))
-
                     End If
 
                 Else
@@ -663,12 +704,22 @@ Module WordPress
                 End If
             Next
             If Not CocinaOffice Then
-                'IdCocinaIndependiente = dtPrestaciones.Rows(i)("Id_WP")
-                Dim rows() As DataRow
-                rows = dtPrestaciones.Select("Campo = 'CocinaOffice'")
-                If rows.Length > 0 Then
-                    ListaPropos.Add(rows(0)("Id_WP"))
+                Dim Id_Tipo As Integer
+                Id_Tipo = Obtener_Id_WP_Tipo(Inmueble)
+
+                Sel = "SELECT COUNT(*) FROM Tipo WHERE TipoPrincipal = 'VIVIENDAS' and Id_WP = " & Id_Tipo
+                Dim Cuantos As Integer
+                Cuantos = BD_CERO.Execute(Sel, False)
+
+                If Cuantos > 0 Then
+                    'IdCocinaIndependiente = dtPrestaciones.Rows(i)("Id_WP")
+                    Dim rows() As DataRow
+                    rows = dtPrestaciones.Select("Campo = 'CocinaOffice'")
+                    If rows.Length > 0 Then
+                        ListaPropos.Add(rows(0)("Id_WP"))
+                    End If
                 End If
+
 
             End If
         End If
@@ -755,6 +806,9 @@ Module WordPress
 
             Sel = "SELECT Id_WP FROM Inmuebles WHERE Referencia = '" & Referencia & "'"
             Id_WP = BD_CERO.Execute(Sel, False, 0)
+            If Id_WP = 0 Then
+                Return True
+            End If
         End If
 
         Dim Resultado As Boolean
@@ -776,7 +830,7 @@ Module WordPress
 
     End Function
 
-    Public Function WP_Alta_Modificacion_Inmueble(InmuebleCompleto As Tablas.clInmuebleConId_WP, Accion As String) As Boolean
+    Public Function WP_Alta_Modificacion_Inmueble(InmuebleCompleto As Tablas.clInmuebleConId_WP, Accion As String, Optional ObtenerToken As Boolean = True) As Boolean
 
         Dim Resultado As Boolean
         Try
@@ -820,10 +874,10 @@ Module WordPress
 
             Dim MotivoParaControl As String = ""
             If Accion = "INSERT" Then
-                Res = WordPressPost(Funcion, postData)
+                Res = WordPressPost(Funcion, postData,,, ObtenerToken)
                 MotivoParaControl = "ALTA INMUEBLE"
             Else
-                Res = WordPressPost(Funcion & "/" & InmuebleCompleto.ID_WP, postData)
+                Res = WordPressPost(Funcion & "/" & InmuebleCompleto.ID_WP, postData,,, ObtenerToken)
                 MotivoParaControl = "MODIFICACION INMUEBLE"
             End If
 
@@ -841,16 +895,20 @@ Module WordPress
                     Sel = "UPDATE Inmuebles Set Id_WP = " & IdWpInmuebleCreado & ", FechaPublicado_WP = GETDATE() WHERE Contador = " & InmuebleCompleto.Inmueble.Contador
                     BD_CERO.Execute(Sel)
 
-                    If InmuebleCompleto.Inmueble.Reservado Then
-                        postData = SerializarPost("private", "status")
-                    Else
-                        postData = SerializarPost("publish", "status")
-                    End If
 
-                    Res = WordPressPost(Funcion & "/" & IdWpInmuebleCreado, postData)
 
 
                 End If
+
+                If InmuebleCompleto.Inmueble.Reservado Then
+                    postData = SerializarPost("private", "status")
+
+                    Res = WordPressPost(Funcion & "/" & IdWpInmuebleCreado, postData)
+                    'Else
+                    '    postData = SerializarPost("publish", "status")
+                End If
+
+
 
                 Sel = "UPDATE Inmuebles Set link_WP = '" & urlPropiedad & "' WHERE Contador = " & InmuebleCompleto.Inmueble.Contador
                 BD_CERO.Execute(Sel)
@@ -884,15 +942,19 @@ Module WordPress
             Dim Sel As String
             Sel = "SELECT Id_WP FROM Inmuebles WHERE Referencia = '" & Referencia & "'"
             Id_WP = BD_CERO.Execute(Sel, False, 0)
+
+            If Id_WP = 0 Then
+                Return True
+            End If
         End If
 
-        Dim postData As String
+            Dim postData As String
         Dim Funcion As String
 
         Funcion = GL_ConfiguracionWeb.API_WP_Funcion_Propiedades
 
         If Accion = "RESERVAR" Then
-            postData = SerializarPost("draft", "status")
+            postData = SerializarPost("private", "status")
         Else
             postData = SerializarPost("publish", "status")
         End If
@@ -1007,7 +1069,7 @@ Module WordPress
 
         Dim Sel As String
 
-        Dim Inmueble As WebServiceVenalia.clInmueblesAlta
+        Dim Inmueble As Tablas.clInmueblesAlta
         Inmueble = InmuebleCompleto.Inmueble
 
         Dim Inmueble_wp As New Tablas.cl_wp_Immueble
@@ -1214,7 +1276,7 @@ Module WordPress
         Return Inmueble_wp
     End Function
 
-    Public Function Obtener_Id_WP_Tipo(Inmueble As WebServiceVenalia.clInmueblesAlta) As Integer
+    Public Function Obtener_Id_WP_Tipo(Inmueble As Tablas.clInmueblesAlta) As Integer
 
         Dim Sel As String
         Sel = "SELECT Id_WP FROM Tipo WHERE Tipo = '" & Funciones.pf_ReplaceComillas(Inmueble.Tipo) & "'"
@@ -1223,7 +1285,7 @@ Module WordPress
         Return Id_WP
 
     End Function
-    Public Function Obtener_Id_WP_TipoVenta(Inmueble As WebServiceVenalia.clInmueblesAlta) As Integer
+    Public Function Obtener_Id_WP_TipoVenta(Inmueble As Tablas.clInmueblesAlta) As Integer
 
         Dim Sel As String
         Dim Id_WP As Integer
@@ -1244,7 +1306,7 @@ Module WordPress
         Return Id_WP
 
     End Function
-    Public Function Obtener_Id_WP_Otros(Inmueble As WebServiceVenalia.clInmueblesAlta, Campo As String) As Integer
+    Public Function Obtener_Id_WP_Otros(Inmueble As Tablas.clInmueblesAlta, Campo As String) As Integer
 
         Dim Sel As String
         Sel = "SELECT Id_WP FROM WP_OtrosCampos WHERE Campo = '" & Funciones.pf_ReplaceComillas(Campo) & "'"

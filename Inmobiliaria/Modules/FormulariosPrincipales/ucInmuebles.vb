@@ -2177,35 +2177,35 @@ Partial Public Class ucInmuebles
                 Dim ReferenciaVieja As String = BD_CERO.Execute("SELECT Referencia FROM Inmuebles WHERE Contador=" & BinSrc.Current("Contador"), False)
                 If ReferenciaVieja <> BinSrc.Current("Referencia") Then
 
-                    If Not DatosEmpresa.WordPress AndAlso GL_ConfiguracionWeb.web3B AndAlso Not Debugger.IsAttached Then
+                    'If Not DatosEmpresa.WordPress AndAlso GL_ConfiguracionWeb.web3B AndAlso Not Debugger.IsAttached Then
 
-                        Try
-                            Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                    '    Try
+                    '        Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
 
-                            If Not Ser.CambiaReferencia("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, ReferenciaVieja, BinSrc.Current("Referencia")) Then
-                                'MensajeError("Error al cambiar la Referencia en la WEB, compruebe la conexión.")
-                                FuncionesBD.Accion("CAMBIOREFERENCIA", "Inmuebles", BinSrc.Current("Referencia"), Valor:=ReferenciaVieja, MensajeError:="Error")
-                                'Return False
-                            End If
-                        Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
-                            'MensajeError("Error al cambiar la Referencia en la WEB, compruebe la conexión.")
-                            'MessageBox.Show(FaultEX.Message)
-                            'txtReferencia.EditValue = ReferenciaVieja
-                            'BinSrc.Current("Referencia") = ReferenciaVieja
-                            FuncionesBD.Accion("CAMBIOREFERENCIA", "Inmuebles", BinSrc.Current("Referencia"), Valor:=ReferenciaVieja, MensajeError:=FaultEX.Message)
-                            'Return False
+                    '        If Not Ser.CambiaReferencia("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, ReferenciaVieja, BinSrc.Current("Referencia")) Then
+                    '            'MensajeError("Error al cambiar la Referencia en la WEB, compruebe la conexión.")
+                    '            FuncionesBD.Accion("CAMBIOREFERENCIA", "Inmuebles", BinSrc.Current("Referencia"), Valor:=ReferenciaVieja, MensajeError:="Error")
+                    '            'Return False
+                    '        End If
+                    '    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
+                    '        'MensajeError("Error al cambiar la Referencia en la WEB, compruebe la conexión.")
+                    '        'MessageBox.Show(FaultEX.Message)
+                    '        'txtReferencia.EditValue = ReferenciaVieja
+                    '        'BinSrc.Current("Referencia") = ReferenciaVieja
+                    '        FuncionesBD.Accion("CAMBIOREFERENCIA", "Inmuebles", BinSrc.Current("Referencia"), Valor:=ReferenciaVieja, MensajeError:=FaultEX.Message)
+                    '        'Return False
 
-                        Catch ex As Exception
-                            'MensajeError("Error al cambiar la Referencia en la WEB, compruebe la conexión.")
-                            'MessageBox.Show(ex.Message)
-                            'txtReferencia.EditValue = ReferenciaVieja
-                            'BinSrc.Current("Referencia") = ReferenciaVieja
-                            FuncionesBD.Accion("CAMBIOREFERENCIA", "Inmuebles", BinSrc.Current("Referencia"), Valor:=ReferenciaVieja, MensajeError:=ex.Message)
-                            'Return False
+                    '    Catch ex As Exception
+                    '        'MensajeError("Error al cambiar la Referencia en la WEB, compruebe la conexión.")
+                    '        'MessageBox.Show(ex.Message)
+                    '        'txtReferencia.EditValue = ReferenciaVieja
+                    '        'BinSrc.Current("Referencia") = ReferenciaVieja
+                    '        FuncionesBD.Accion("CAMBIOREFERENCIA", "Inmuebles", BinSrc.Current("Referencia"), Valor:=ReferenciaVieja, MensajeError:=ex.Message)
+                    '        'Return False
 
-                        End Try
+                    '    End Try
 
-                    End If
+                    'End If
 
                     If System.IO.Directory.Exists(GL_CarpetaFotos & "/" & ReferenciaVieja) Then
                         Try
@@ -3643,7 +3643,7 @@ Partial Public Class ucInmuebles
 
 
 
-        If Not BinSrc.Current("Baja") Then
+        If Not PulsadoVerBajas Then
 
             PanelControl3.BackColor = GL_ColorAruraRosaBaja
             PanelBotones.BackColor = GL_ColorAruraRosaBaja
@@ -7695,46 +7695,85 @@ Partial Public Class ucInmuebles
                         .WriteEndElement() '</caracteristicas>
 
 
-                        Dim ftp As New tb_FTP
-                        Dim DirFiles As List(Of String) = ftp.FTPArchivosCarpeta(GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia"))
-                        If Not IsNothing(DirFiles) AndAlso DirFiles.Count > 0 Then
-                            .WriteStartElement("adjuntos") 'inicio <adjuntos>'NO OBLIGATORIO
-                            For i = 0 To DirFiles.Count - 1
+                        Dim Sel As String
+                        Sel = "SELECT * FROM WP_FOTOS WHERE ContadorInmueble = " & dtr("Contador")
+                        Dim bdFotos As New BaseDatos
+                        Dim dtFotos As DataTable
+                        bdFotos.LlenarDataSet(Sel, "T")
+                        dtFotos = bdFotos.ds.Tables("T")
+
+                        .WriteStartElement("adjuntos") 'inicio images
+
+                        If dtFotos.Rows.Count > 0 Then
+
+                            For k = 0 To dtFotos.Rows.Count - 1
                                 Try
-                                    .WriteStartElement("adjunto") '<adjunto tipo="foto" url="http://www.webdelcliente.com/images/foto1.jpeg"><![CDATA[Cocina]]></adjunto>
+                                    .WriteStartElement("adjunto") 'inicio image
                                     .WriteAttributeString("tipo", "foto")
-                                    ' .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i))
-                                    If GL_ConfiguracionWeb.web3B Then
-                                        .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
-                                    Else
-                                        .WriteAttributeString("url", GL_ConfiguracionWeb.WebConHHTP & Replace(GL_ConfiguracionWeb.DirectorioFotos, "/httpdocs", "") & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
-                                    End If
-                                    '.WriteCData(System.IO.Path.GetFileName(DirFiles(i)))
-                                    .WriteCData(i + 1)
+                                    .WriteAttributeString("url", dtFotos.Rows(k)("SourceURL")) 'url de la imagen
+                                    .WriteCData(k + 1)
                                     .WriteEndElement() '</adjunto>
+
                                 Catch
                                 End Try
                             Next
-                            .WriteEndElement() 'fin </adjuntos>
+
                         Else
-                            .WriteStartElement("adjuntos")
-                            Try
-                                .WriteStartElement("adjunto")
-                                .WriteAttributeString("tipo", "foto")
-                                .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/SinImagen.jpg")
-
-                                'If GL_ConfiguracionWeb.web3B Then
-                                '    .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/SinImagen.jpg")
-                                'Else
-                                '    .WriteAttributeString("url", GL_ConfiguracionWeb.WebConHHTP & Replace(GL_ConfiguracionWeb.DirectorioFotos, "/httpdocs", "") & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
-                                'End If
-
-                                .WriteCData("Sin imagenes")
-                                .WriteEndElement() '</adjunto>
-                            Catch
-                            End Try
-                            .WriteEndElement() 'fin </adjuntos>
+                            .WriteStartElement("adjunto") 'inicio image
+                            .WriteAttributeString("tipo", "foto")
+                            .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/SinImagen.jpg")
+                            .WriteCData("Sin imagenes")
+                            .WriteEndElement() '</adjunto>
                         End If
+
+                        .WriteEndElement() 'fin de images
+                        'Dim ftp As New tb_FTP
+
+
+                        'Dim ftp As New tb_FTP
+                        'Dim DirFiles As List(Of String) = ftp.FTPArchivosCarpeta(GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia"))
+                        'If Not IsNothing(DirFiles) AndAlso DirFiles.Count > 0 Then
+                        '    .WriteStartElement("adjuntos") 'inicio <adjuntos>'NO OBLIGATORIO
+                        '    For i = 0 To DirFiles.Count - 1
+                        '        Try
+                        '            .WriteStartElement("adjunto") '<adjunto tipo="foto" url="http://www.webdelcliente.com/images/foto1.jpeg"><![CDATA[Cocina]]></adjunto>
+                        '            .WriteAttributeString("tipo", "foto")
+                        '            ' .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i))
+                        '            If GL_ConfiguracionWeb.web3B Then
+                        '                .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
+                        '            Else
+                        '                .WriteAttributeString("url", GL_ConfiguracionWeb.WebConHHTP & Replace(GL_ConfiguracionWeb.DirectorioFotos, "/httpdocs", "") & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
+                        '            End If
+                        '            '.WriteCData(System.IO.Path.GetFileName(DirFiles(i)))
+                        '            .WriteCData(i + 1)
+                        '            .WriteEndElement() '</adjunto>
+                        '        Catch
+                        '        End Try
+                        '    Next
+                        '    .WriteEndElement() 'fin </adjuntos>
+                        'Else
+                        '    .WriteStartElement("adjuntos")
+                        '    Try
+                        '        .WriteStartElement("adjunto")
+                        '        .WriteAttributeString("tipo", "foto")
+                        '        .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/SinImagen.jpg")
+
+                        '        'If GL_ConfiguracionWeb.web3B Then
+                        '        '    .WriteAttributeString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/SinImagen.jpg")
+                        '        'Else
+                        '        '    .WriteAttributeString("url", GL_ConfiguracionWeb.WebConHHTP & Replace(GL_ConfiguracionWeb.DirectorioFotos, "/httpdocs", "") & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
+                        '        'End If
+
+                        '        .WriteCData("Sin imagenes")
+                        '        .WriteEndElement() '</adjunto>
+                        '    Catch
+                        '    End Try
+                        '    .WriteEndElement() 'fin </adjuntos>
+                        'End If
+
+
+
+
                         .WriteEndElement() 'fin de referencia
                         pf.BringToFront()
                         pf.nuevoPaso()
@@ -7827,12 +7866,12 @@ Partial Public Class ucInmuebles
             End Try
             ficheroDestinoXml = Replace(ficheroDestinoXml, ".xml", ".zip")
 
-            If Not SubirAlFtp(ficheroDestinoXml, GL_ConfiguracionWeb.FTPClienteUsuario, GL_ConfiguracionWeb.FTPClientePass, "ftp://inmobiliariauim.com/httpdocs/yaencontre/" & Path.GetFileName(ficheroDestinoXml)) Then
+            If Not SubirAlFtp(ficheroDestinoXml, GL_ConfiguracionWeb.FTPClienteUsuario, GL_ConfiguracionWeb.FTPClientePass, GL_ServidorFTP & "/yaencontre/" & Path.GetFileName(ficheroDestinoXml)) Then
                 pf.Close()
                 Return
             End If
         Else
-            If Not SubirAlFtp(ficheroDestinoXml, GL_ConfiguracionWeb.FTPClienteUsuario, GL_ConfiguracionWeb.FTPClientePass, GL_ConfiguracionWeb.FTPClienteDireccion & "/httpdocs/yaencontre/" & Path.GetFileName(ficheroDestinoXml)) Then
+            If Not SubirAlFtp(ficheroDestinoXml, GL_ConfiguracionWeb.FTPClienteUsuario, GL_ConfiguracionWeb.FTPClientePass, GL_ServidorFTP & "/yaencontre/" & Path.GetFileName(ficheroDestinoXml)) Then
                 pf.Close()
                 Return
             End If
@@ -8120,39 +8159,68 @@ Partial Public Class ucInmuebles
                         End Select
 
                         .WriteEndElement() 'fin de features
-                        Dim ftp As New tb_FTP
-                        Dim DirFiles As List(Of String) = ftp.FTPArchivosCarpeta(GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia"))
-                        If Not IsNothing(DirFiles) AndAlso DirFiles.Count > 0 Then
-                            .WriteStartElement("images") 'inicio images
-                            'para cada imagen
-                            For i = 0 To DirFiles.Count - 1
-                                Try
 
+
+                        Dim Sel As String
+                        Sel = "SELECT * FROM WP_FOTOS WHERE ContadorInmueble = " & dtr("Contador")
+                        Dim bdFotos As New BaseDatos
+                        Dim dtFotos As DataTable
+                        bdFotos.LlenarDataSet(Sel, "T")
+                        dtFotos = bdFotos.ds.Tables("T")
+
+                        If dtFotos.Rows.Count > 0 Then
+                            .WriteStartElement("images") 'inicio images
+                            For k = 0 To dtFotos.Rows.Count - 1
+                                Try
                                     .WriteStartElement("image") 'inicio image
 
-                                    If DirFiles(i) = dtr("FotoPrincipal") Then
+                                    If dtFotos.Rows(k)("Principal") = 1 Then
                                         .WriteElementString("code", "1")
                                     Else
                                         .WriteElementString("code", "0")
                                     End If
-
-
-                                    '0 desconocido '1 baño '2 cocina '3 detalles '4 dormitorio '5 fachada '6 garaje '7 jardín '8 plano '9 salón '10 terraza '11 vistas '12 piscina '13 compañeros '14 pasillo '15 hall '16 sala de espera '17 zonas comunes '18 recepción '19 trastero '20 archivo '21 almacén '22 estancia '23 entrada/salida '24 terreno
-                                    '.WriteElementString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
-
-                                    If GL_ConfiguracionWeb.web3B Then
-                                        .WriteElementString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
-                                    Else
-                                        .WriteElementString("url", GL_ConfiguracionWeb.WebConHHTP & Replace(GL_ConfiguracionWeb.DirectorioFotos, "/httpdocs", "") & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
-                                    End If
+                                    .WriteElementString("url", dtFotos.Rows(k)("SourceURL")) 'url de la imagen
 
                                     .WriteEndElement() 'fin de image
                                 Catch
                                 End Try
                             Next
                             .WriteEndElement() 'fin de images
-                        Else
+
                         End If
+                        'Dim ftp As New tb_FTP
+                        'Dim DirFiles As List(Of String) = ftp.FTPArchivosCarpeta(GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia"))
+                        'If Not IsNothing(DirFiles) AndAlso DirFiles.Count > 0 Then
+                        '    .WriteStartElement("images") 'inicio images
+                        '    'para cada imagen
+                        '    For i = 0 To DirFiles.Count - 1
+                        '        Try
+
+                        '            .WriteStartElement("image") 'inicio image
+
+                        '            If DirFiles(i) = dtr("FotoPrincipal") Then
+                        '                .WriteElementString("code", "1")
+                        '            Else
+                        '                .WriteElementString("code", "0")
+                        '            End If
+
+
+                        '            '0 desconocido '1 baño '2 cocina '3 detalles '4 dormitorio '5 fachada '6 garaje '7 jardín '8 plano '9 salón '10 terraza '11 vistas '12 piscina '13 compañeros '14 pasillo '15 hall '16 sala de espera '17 zonas comunes '18 recepción '19 trastero '20 archivo '21 almacén '22 estancia '23 entrada/salida '24 terreno
+                        '            '.WriteElementString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
+
+                        '            If GL_ConfiguracionWeb.web3B Then
+                        '                .WriteElementString("url", "http://venalia.net" & GL_ConfiguracionWeb.DirectorioFotos & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
+                        '            Else
+                        '                .WriteElementString("url", GL_ConfiguracionWeb.WebConHHTP & Replace(GL_ConfiguracionWeb.DirectorioFotos, "/httpdocs", "") & "/" & dtr("Referencia") & "/" & DirFiles(i)) 'url de la imagen
+                        '            End If
+
+                        '            .WriteEndElement() 'fin de image
+                        '        Catch
+                        '        End Try
+                        '    Next
+                        '    .WriteEndElement() 'fin de images
+                        'Else
+                        'End If
 
                         .WriteEndElement() 'fin de Property
                         pf.nuevoPaso()
@@ -8290,11 +8358,13 @@ Partial Public Class ucInmuebles
         If ruta = "" Then
             ruta = ftp.RutaInicialFTP & carpeta & "/" & Path.GetFileName(Fichero)
         End If
+
         Try
             ftp.FTPBorrarFichero(ruta, usuario, pass, ruta)
         Catch ex As Exception
         End Try
         Try
+
             Dim men As String = ftp.SubirArchivoAlServidor(Fichero, ruta, carpeta, usuario, pass)
             If men <> "" Then
                 XtraMessageBox.Show("No se ha podido publicar en " & Portal & vbCrLf & men, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

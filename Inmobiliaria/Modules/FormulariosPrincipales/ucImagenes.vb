@@ -632,6 +632,10 @@ Public Class ucImagenes
                         Dim Id_WP_Foto As Integer = ObtenerIdFoto_Desde_IdPropertyYFichero(WP_IdProperty, FicheroAEliminar)
                         If Id_WP_Foto <> 0 Then
                             WPEliminarFoto(Id_WP_Foto)
+                        Else
+                            Dim Sel As String
+                            Sel = "DELETE FROM WP_Fotos WHERE ContadorInmueble = " & ContadorInmueble & " AND Fichero = '" & FicheroAEliminar & "' "
+                            BD_CERO.Execute(Sel)
                         End If
                     Else
 

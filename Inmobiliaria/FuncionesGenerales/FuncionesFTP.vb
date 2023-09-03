@@ -8,19 +8,24 @@ Public Class tb_FTP
     Public PassWordFTP As String
     Public RutaInicialFTP As String
     '    Sub New(Optional ByVal BuscarDatosFTPEnBaseDeDatos As Boolean = False, Optional ByVal Usuario As String = "tresbits", Optional ByVal Contrasena As String = "43D214B34643B13132BC2A02C0BE1F4A", Optional ByVal ContasenaEncriptada As Boolean = True, Optional ByVal RutaFTP As String = "ftp://ftp.tresbits.es/")
-    Sub New(Optional ByVal BuscarDatosFTPEnBaseDeDatos As Boolean = False, Optional ByVal Usuario As String = "venalia", Optional ByVal Contrasena As String = "Ftp1234#TB", Optional ByVal ContasenaEncriptada As Boolean = False, Optional ByVal RutaFTP As String = "ftp://ftp.venalia.net")
+    'Sub New(Optional ByVal BuscarDatosFTPEnBaseDeDatos As Boolean = False, Optional ByVal Usuario As String = "josecifre@tresbits.es", Optional ByVal Contrasena As String = "RGy4PP", Optional ByVal ContasenaEncriptada As Boolean = False, Optional ByVal RutaFTP As String = "ftp://ftp.venalia.net")
+    Sub New(Optional ByVal BuscarDatosFTPEnBaseDeDatos As Boolean = False, Optional ByVal Usuario As String = "tresbits", Optional ByVal Contrasena As String = "Ftp1234#TB", Optional ByVal ContasenaEncriptada As Boolean = False, Optional ByVal RutaFTP As String = "ftp://ftp.venalia.net")
 
-        If Not IsNothing(GL_ConfiguracionWeb) Then
-            RutaFTP = GL_ConfiguracionWeb.Servidor
-            Contrasena = GL_ConfiguracionWeb.Pass
-            Usuario = GL_ConfiguracionWeb.Usuario
+        If Not IsNothing(GL_ServidorFTP) Then
+            RutaFTP = GL_ServidorFTP
+
+            PassWordFTP = Contrasena
+            UsuarioFTP = Usuario
+
+            'Contrasena = GL_ConfiguracionWeb.Pass
+            'Usuario = GL_ConfiguracionWeb.Usuario
         Else
             RutaInicialFTP = RutaFTP
             PassWordFTP = Contrasena
             UsuarioFTP = Usuario
         End If
 
-        
+
 
         If BuscarDatosFTPEnBaseDeDatos Then
             RellenarUsuarioYPassDeBaseDeDatos()
@@ -425,7 +430,7 @@ Public Class tb_FTP
                 ServidorDestino = "ftp://" & ServidorDestino
             End If
 
-            FuncionesGenerales.Funciones.TextoANotePad(ServidorDestino & vbCrLf & usuario & vbCrLf & pass & vbCrLf & ArchivoOrigen)
+            'FuncionesGenerales.Funciones.TextoANotePad(ServidorDestino & vbCrLf & usuario & vbCrLf & pass & vbCrLf & ArchivoOrigen)
             My.Computer.Network.UploadFile(ArchivoOrigen, ServidorDestino, usuario, pass)
 
         Catch ex2 As WebException
@@ -568,9 +573,16 @@ Public Class tb_FTP
         End If
         Dim peticionFTP As FtpWebRequest
         If ruta = "" Then
-            If Not Origen.Contains(RutaInicialFTP) Then Origen = RutaInicialFTP & Origen
+            If Not Origen.Contains(RutaInicialFTP) Then
+                Origen = RutaInicialFTP & Origen
+            End If
         Else
-            Origen = "ftp://" & ruta
+            If Not Origen.Contains("ftp://") Then
+                Origen = "ftp://" & ruta
+            Else
+                Origen = ruta
+            End If
+
         End If
 
         Try
@@ -581,7 +593,7 @@ Public Class tb_FTP
 
             ' Seleccionamos el comando que vamos a utilizar: Eliminar un fichero
             peticionFTP.Method = WebRequestMethods.Ftp.DeleteFile
-            peticionFTP.UsePassive = False
+            peticionFTP.UsePassive = True
 
             Dim respuestaFTP As FtpWebResponse
             respuestaFTP = CType(peticionFTP.GetResponse(), FtpWebResponse)

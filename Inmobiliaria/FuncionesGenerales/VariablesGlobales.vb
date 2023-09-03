@@ -362,6 +362,8 @@
     Public GL_ConfiguracionWeb As Tablas.clConfiguracionWeb
     Public GL_PoblacionPrederminada As String
 
+    Public GL_ServidorFTP As String
+
     Public GL_Error As String
 
     Public GL_PortalesDesactualizados As Boolean

@@ -5,9 +5,10 @@ Imports System.Data
 Public Class Tablas
 
 
+
 #Region "WordPress"
     Public Class clInmuebleConId_WP
-        Public Inmueble As WebServiceVenalia.clInmueblesAlta
+        Public Inmueble As Tablas.clInmueblesAlta
         Public ID_WP As Integer
         Public Id_WP_FotoPrincipal As Integer
     End Class
@@ -401,6 +402,191 @@ Public Class Tablas
 
 #End Region
 
+
+    Public Class clInmueblesAlta
+
+        Public AlquilerOpcionCompra As Boolean
+
+
+            Public AlquilerVacacional As Boolean
+
+
+            Public Altura As Integer
+
+
+            Public Amueblado As Boolean
+
+
+            Public AnoConstruccion As Integer
+
+
+            Public Ascensor As Boolean
+
+
+            Public Balcon As Boolean
+
+
+            Public Banos As Integer
+
+
+            Public CalificacionEnergetica As String
+
+
+            Public CambioPrecio As String
+
+
+            Public CocinaOffice As Boolean
+
+
+            Public CodPostal As String
+
+
+            Public CodigoEmpresa As Integer
+
+
+            Public Contador As Long
+
+
+            Public Delegacion As Integer
+
+
+            Public Direccion As String
+
+
+            Public Duplex As Boolean
+
+
+            Public Estado As String
+
+
+            Public Extras As String
+
+
+            Public FechaAlta As Date
+
+
+            Public FechaCambioPrecio As System.Nullable(Of Date)
+
+
+            Public FechaUltimoCambio As System.Nullable(Of Date)
+
+
+            Public FotoPrincipal As String
+
+
+            Public Galeria As Boolean
+
+
+            Public Garaje As Boolean
+
+
+            Public GarajeCerrado As Boolean
+
+
+            Public Habitaciones As Integer
+
+
+            Public Jardin As Boolean
+
+
+            Public MBalcon As Integer
+
+
+            Public MBalcon2 As Integer
+
+
+            Public MGaraje As Integer
+
+
+            Public MJardin As Integer
+
+
+            Public MPatio As Integer
+
+
+            Public MPatio2 As Integer
+
+
+            Public MPlaya As Integer
+
+
+            Public MTerraza As Integer
+
+
+            Public MTerraza2 As Integer
+
+
+            Public MTrastero As Integer
+
+
+            Public Metros As Integer
+
+
+            Public MostrarPPrincipalWeb As Boolean
+
+
+            Public Numero As String
+
+
+            Public Oportunidad As Boolean
+
+
+            Public Orientacion As String
+
+
+            Public Patio As Boolean
+
+
+            Public Piscina As Boolean
+
+
+            Public Poblacion As String
+
+
+            Public Precio As Integer
+
+
+            Public PrecioGaraje As Integer
+
+
+            Public PrecioTrastero As Integer
+
+
+            Public Provincia As String
+
+
+            Public Puerta As String
+
+
+            Public Referencia As String
+
+
+            Public Reservado As Boolean
+
+
+            Public Terraza As Boolean
+
+
+            Public Tipo As String
+
+
+            Public TipoVenta As String
+
+
+            Public Trastero As System.Nullable(Of Boolean)
+
+
+            Public Via As String
+
+
+            Public VistasAlMar As Boolean
+
+
+            Public Zona As String
+
+
+            Public ZonaComercial As Boolean
+        End Class
 
     Public Class clZonas
 

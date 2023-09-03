@@ -2317,6 +2317,7 @@ Namespace FuncionesGenerales
 
         Public Shared Sub SetSelectionAppearance(ByVal view As MyGridView, ByVal flag As Boolean)
             view.OptionsSelection.EnableAppearanceFocusedCell = flag
+
             view.OptionsSelection.EnableAppearanceFocusedRow = flag
             view.OptionsSelection.EnableAppearanceHideSelection = flag
         End Sub
@@ -2533,24 +2534,24 @@ Namespace FuncionesGenerales
                             End If
                         Else
 
-                            Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
-                            If Not Ser.ActualizaReservado("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia, Valor) Then
-                                BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','Error Reserva')")
-                                'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
+                            'Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                            'If Not Ser.ActualizaReservado("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia, Valor) Then
+                            '    BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','Error Reserva')")
+                            '    'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
 
 
-                            End If
+                            'End If
                         End If
 
-                    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
-                        Dim MensaError As String = FaultEX.Message
-                        If MensaError > 250 Then
-                            MensaError = Microsoft.VisualBasic.Left(MensaError, 250)
-                        End If
+                        'Catch FaultEX As ServiceModel.FaultException(Of tabla.clResultado)
+                        '    Dim MensaError As String = FaultEX.Message
+                        '    If MensaError > 250 Then
+                        '        MensaError = Microsoft.VisualBasic.Left(MensaError, 250)
+                        '    End If
 
-                        BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','" & MensaError & "')")
-                        'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
-                        'MessageBox.Show(FaultEX.Message)
+                        '    BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','" & MensaError & "')")
+                        '    'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
+                        '    'MessageBox.Show(FaultEX.Message)
                     Catch ex As Exception
                         Dim MensaError As String = ex.Message
                         If MensaError > 250 Then
@@ -2561,35 +2562,35 @@ Namespace FuncionesGenerales
                         'MessageBox.Show(ex.Message)
                     End Try
                 ElseIf FotoPrincipal Then
-                    'ACTUALIZAR SOLO FOTOPRINCIPAL EN LA WEB
-                    Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
-                    Try
-                        If DatosEmpresa.WordPress Then
+                    ''ACTUALIZAR SOLO FOTOPRINCIPAL EN LA WEB
+                    ''Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                    'Try
+                    '    'If DatosEmpresa.WordPress Then
 
-                        Else
-                            If Not Ser.ActualizaFotoPrincipal("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia, Valor) Then
-                                BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','Error FotoPrincipal')")
-                                'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
-                            End If
-                        End If
+                    '    'Else
+                    '    '    If Not Ser.ActualizaFotoPrincipal("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia, Valor) Then
+                    '    '        BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','Error FotoPrincipal')")
+                    '    '        'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
+                    '    '    End If
+                    '    'End If
 
-                    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
-                        Dim MensaError As String = FaultEX.Message
-                        If MensaError > 250 Then
-                            MensaError = Microsoft.VisualBasic.Left(MensaError, 250)
-                        End If
-                        BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','" & MensaError & "')")
-                        'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
-                        'MessageBox.Show(FaultEX.Message)
-                    Catch ex As Exception
-                        Dim MensaError As String = ex.Message
-                        If MensaError > 250 Then
-                            MensaError = Microsoft.VisualBasic.Left(MensaError, 250)
-                        End If
-                        BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','" & MensaError & "')")
-                        'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
-                        'MessageBox.Show(ex.Message)
-                    End Try
+                    '    'Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
+                    '    '    Dim MensaError As String = FaultEX.Message
+                    '    '    If MensaError > 250 Then
+                    '    '        MensaError = Microsoft.VisualBasic.Left(MensaError, 250)
+                    '    '    End If
+                    '    '    BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','" & MensaError & "')")
+                    '    '    'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
+                    '    '    'MessageBox.Show(FaultEX.Message)
+                    'Catch ex As Exception
+                    '    Dim MensaError As String = ex.Message
+                    '    If MensaError > 250 Then
+                    '        MensaError = Microsoft.VisualBasic.Left(MensaError, 250)
+                    '    End If
+                    '    BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','" & MensaError & "')")
+                    '    'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
+                    '    'MessageBox.Show(ex.Message)
+                    'End Try
                 Else
                     If Accion = "INSTRUCCION" Then
                         BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'')")
@@ -2815,7 +2816,7 @@ Namespace FuncionesGenerales
 
 
             Dim DTR2 As Object
-            Dim Inmueble As WebServiceVenalia.clInmueblesAlta
+            Dim Inmueble As Tablas.clInmueblesAlta
             Dim Id_WP As Integer = 0
             Dim Id_WP_FotoPrincipal As Integer = 0
 
@@ -2832,7 +2833,7 @@ Namespace FuncionesGenerales
 
                 DTR2.Read()
 
-                Inmueble = New WebServiceVenalia.clInmueblesAlta
+                Inmueble = New Tablas.clInmueblesAlta
 
 
                 Inmueble.Contador = DTR2("Contador")
@@ -2966,7 +2967,7 @@ Namespace FuncionesGenerales
 
             Return InmuebleConId_WP
         End Function
-        Public Shared Function SincronizarReferencia(ByVal Accion As String, ByVal Referencia As String, ByVal MensajeError As String) As Boolean
+        Public Shared Function SincronizarReferencia(ByVal Accion As String, ByVal Referencia As String, ByVal ContadorAccionesPendientes As Integer, ByVal MensajeError As String, Optional ObtenerToken As Boolean = True) As Boolean
 
             'recorrer todas las acciones
 
@@ -2985,42 +2986,42 @@ Namespace FuncionesGenerales
 
                     If Not IsNothing(InmuebleCompleto.Inmueble) Then
 
-                        Resultado = WP_Alta_Modificacion_Inmueble(InmuebleCompleto, Accion)
+                        Resultado = WP_Alta_Modificacion_Inmueble(InmuebleCompleto, Accion, ObtenerToken)
                     Else
                         Resultado = True
                     End If
 
 
-                Else
-                    Try
+                    'Else
+                    '    Try
 
-                        Dim Inmueble As WebServiceVenalia.clInmueblesAlta
-                        InmuebleCompleto = PrepararObjetoInmuebleAlta(Referencia)
-                        Inmueble = InmuebleCompleto.Inmueble
+                    '        Dim Inmueble As WebServiceVenalia.clInmueblesAlta
+                    '        InmuebleCompleto = PrepararObjetoInmuebleAlta(Referencia)
+                    '        Inmueble = InmuebleCompleto.Inmueble
 
-                        If Not IsNothing(Inmueble) Then
-                            Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                    '        If Not IsNothing(Inmueble) Then
+                    '            Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
 
-                            If Not Ser.AltaInmueble("TresBits", "EE358CB6BF1683287B21B102BBC848EB", Inmueble) Then
-                                'MsgBox("Error alta")
-                                GL_Error = "Error"
-                                Resultado = False
-                            Else
-                                Resultado = True
-                            End If
-                        Else
-                            Resultado = True
-                        End If
+                    '            If Not Ser.AltaInmueble("TresBits", "EE358CB6BF1683287B21B102BBC848EB", Inmueble) Then
+                    '                'MsgBox("Error alta")
+                    '                GL_Error = "Error"
+                    '                Resultado = False
+                    '            Else
+                    '                Resultado = True
+                    '            End If
+                    '        Else
+                    '            Resultado = True
+                    '        End If
 
-                    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
-                        GL_Error = FaultEX.Message
-                        'MessageBox.Show(FaultEX.Message)
-                        Resultado = False
-                    Catch ex As Exception
-                        GL_Error = ex.Message
-                        'MessageBox.Show(ex.Message)
-                        Resultado = False
-                    End Try
+                    '    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
+                    '        GL_Error = FaultEX.Message
+                    '        'MessageBox.Show(FaultEX.Message)
+                    '        Resultado = False
+                    '    Catch ex As Exception
+                    '        GL_Error = ex.Message
+                    '        'MessageBox.Show(ex.Message)
+                    '        Resultado = False
+                    '    End Try
                 End If
 
 
@@ -3036,20 +3037,20 @@ Namespace FuncionesGenerales
                             Resultado = WP_Eliminar_Inmueble(Referencia)
 
                         Else
-                            Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
-                            If Not Ser.BajaInmueble("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia) Then
-                                GL_Error = "Error"
-                                Resultado = False
-                            Else
-                                Resultado = True
-                            End If
+                            'Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                            'If Not Ser.BajaInmueble("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia) Then
+                            '    GL_Error = "Error"
+                            '    Resultado = False
+                            'Else
+                            '    Resultado = True
+                            'End If
                         End If
 
 
-                    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
-                        GL_Error = FaultEX.Message
-                        'MessageBox.Show(FaultEX.Message)
-                        Resultado = False
+                        'Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
+                        '    GL_Error = FaultEX.Message
+                        '    'MessageBox.Show(FaultEX.Message)
+                        '    Resultado = False
                     Catch ex As Exception
                         GL_Error = ex.Message
                         'MessageBox.Show(ex.Message)
@@ -3057,24 +3058,57 @@ Namespace FuncionesGenerales
                     End Try
 
                 Else
-                    Try
-                        Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
-                        If Not Ser.CambiaReferencia("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, MensajeError.Split("|")(0), Referencia) Then
-                            GL_Error = "Error"
-                            Return False
-                            Resultado = False
+                    If Accion = "RESERVAR" Or Accion = "DESRESERVAR" Then
+
+                        Dim Valor As String
+                        Dim Reserva As Boolean
+
+                        If Accion = "RESERVAR" Then
+                            Accion = "UPDATE"
+                            Valor = 1
+                            Reserva = True
                         Else
-                            Resultado = True
+                            Accion = "UPDATE"
+                            Valor = 0
+                            Reserva = True
+
                         End If
-                    Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
-                        GL_Error = FaultEX.Message
-                        'MessageBox.Show(FaultEX.Message)
-                        Resultado = False
-                    Catch ex As Exception
-                        GL_Error = ex.Message
-                        'MessageBox.Show(ex.Message)
-                        Resultado = False
-                    End Try
+                        If DatosEmpresa.WordPress Then
+                            Dim ResultadoStatus As Boolean
+                            Resultado = WP_CambiarStatus(Referencia, IIf(Valor = "1", "RESERVADO", "DESRESERVADO"), IIf(Valor = "1", "RESERVAR", "DESRESERVAR"))
+                            If Not Resultado Then
+                                BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & IIf(Valor = "1", "RESERVAR", "DESRESERVAR") & "','INMUEBLES','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','Error Reserva')")
+                            End If
+                        Else
+
+                            'Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                            'If Not Ser.ActualizaReservado("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, Referencia, Valor) Then
+                            '    BD_CERO.Execute("INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio, MensajeError) VALUES ('" & Accion & "','" & Tabla.ToUpper & "','" & Funciones.pf_ReplaceComillas(Referencia) & "'," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'','Error Reserva')")
+                            '    'MessageBox.Show("No se ha podido actualizar en la web, publique para ver los cambios o espere la actualización automática.")
+
+
+                            'End If
+                        End If
+
+                    End If
+                    'Try
+                    '    Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
+                    '    If Not Ser.CambiaReferencia("TresBits", "EE358CB6BF1683287B21B102BBC848EB", DatosEmpresa.Codigo, MensajeError.Split("|")(0), Referencia) Then
+                    '        GL_Error = "Error"
+                    '        Return False
+                    '        Resultado = False
+                    '    Else
+                    '        Resultado = True
+                    '    End If
+                    'Catch FaultEX As ServiceModel.FaultException(Of WebServiceVenalia.clResultado)
+                    '    GL_Error = FaultEX.Message
+                    '    'MessageBox.Show(FaultEX.Message)
+                    '    Resultado = False
+                    'Catch ex As Exception
+                    '    GL_Error = ex.Message
+                    '    'MessageBox.Show(ex.Message)
+                    '    Resultado = False
+                    'End Try
 
                 End If
 
@@ -3084,7 +3118,7 @@ Namespace FuncionesGenerales
 
             If Resultado Then
                 Dim Sel As String
-                Sel = "DELETE FROM AccionesPendientes WHERE CodigoEmpresa = " & DatosEmpresa.Codigo & " And Referencia = '" & Referencia & "'"
+                Sel = "DELETE FROM AccionesPendientes WHERE Contador = " & ContadorAccionesPendientes
                 BD_CERO.Execute(Sel)
             End If
 
@@ -3108,14 +3142,18 @@ Namespace FuncionesGenerales
             Dim Salir As Boolean = False
             ' Dim Ser As New WebServiceVenalia.WebServiceVenaliaClient
             'recorrer todas las acciones
-            If BD_CERO.Execute("SELECT COUNT(*) FROM AccionesPendientes WHERE Tabla = 'INMUEBLES' AND Accion = 'CAMBIOREFERENCIA' AND CodigoEmpresa = " & DatosEmpresa.Codigo, False) > 0 Then
+            Dim Sel As String
+            Sel = "SELECT COUNT(*) FROM AccionesPendientes WHERE Tabla = 'INMUEBLES' AND Accion = 'CAMBIOREFERENCIA' AND CodigoEmpresa = " & DatosEmpresa.Codigo
+            'primero vemos las acciones de cambio de referncia
+            If BD_CERO.Execute(Sel, False) > 0 Then
 
                 Do 'Cambioreferencias
 
-                    Dim Contador As String = ""
+                    Dim ContadorAccion As String = ""
                     Dim Referencia As String = ""
                     Dim MensajeError As String = ""
-                    Dim Sel As String
+                    Dim Accion As String = ""
+
                     Sel = GL_SQL_TOP1_FRONT & Funciones.SQL_CONVERT("VARCHAR", "Contador") & " " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " Referencia " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " MensajeError FROM AccionesPendientes WHERE Tabla = 'INMUEBLES' AND Accion = 'CAMBIOREFERENCIA' AND CodigoEmpresa = " & DatosEmpresa.Codigo & " ORDER BY CONTADOR" & GL_SQL_TOP1_BACK
                     Dim Res As String
                     Res = BD_CERO.Execute(Sel, False, "")
@@ -3124,11 +3162,17 @@ Namespace FuncionesGenerales
                         Continue Do
                     End If
 
-                    Contador = Split(Res, "|")(0)
+
+                    Accion = "CAMBIOREFERENCIA"
+                    ContadorAccion = Split(Res, "|")(0)
                     Referencia = Split(Res, "|")(1)
                     MensajeError = Split(Res, "|")(2)
 
-                    If Not SincronizarReferencia(Contador, Referencia, MensajeError) Then
+                    If ContadorAccion = "" Then
+                        ContadorAccion = 0
+                    End If
+
+                    If Not SincronizarReferencia(Accion, Referencia, CInt(ContadorAccion), MensajeError) Then
                         Return False
                     End If
 
@@ -3137,22 +3181,30 @@ Namespace FuncionesGenerales
             Salir = False
             Do 'demas acciones
 
+                Dim ContadorAccion As String = ""
                 Dim Accion As String = ""
                 Dim Referencia As String = ""
 
-                Dim Sel As String
-                Sel = GL_SQL_TOP1_FRONT & " Accion " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " Referencia  FROM AccionesPendientes WHERE Tabla = 'INMUEBLES' AND CodigoEmpresa = " & DatosEmpresa.Codigo & " ORDER BY CONTADOR DESC" & GL_SQL_TOP1_BACK
+                'Sel = GL_SQL_TOP1_FRONT & Funciones.SQL_CONVERT("VARCHAR", "Contador") & " " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " Referencia " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " MensajeError FROM AccionesPendientes WHERE Tabla = 'INMUEBLES' AND Accion = 'CAMBIOREFERENCIA' AND CodigoEmpresa = " & DatosEmpresa.Codigo & " ORDER BY CONTADOR" & GL_SQL_TOP1_BACK
+                Sel = GL_SQL_TOP1_FRONT & Funciones.SQL_CONVERT("VARCHAR", "Contador") & " " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " Accion " & GL_SQL_SUMA & " '|' " & GL_SQL_SUMA & " Referencia  FROM AccionesPendientes WHERE Tabla = 'INMUEBLES' AND CodigoEmpresa = " & DatosEmpresa.Codigo & " ORDER BY CONTADOR " & GL_SQL_TOP1_BACK
                 Dim Res As String
                 Res = BD_CERO.Execute(Sel, False, "")
                 If Res = "" Then 'No hay acciones ptes
                     Salir = True
                     Continue Do
                 End If
-                Accion = Split(Res, "|")(0)
-                Referencia = Split(Res, "|")(1)
 
-                If Not SincronizarReferencia(Accion, Referencia, "") Then
-                    Return False
+                ContadorAccion = Split(Res, "|")(0)
+                Accion = Split(Res, "|")(1)
+                Referencia = Split(Res, "|")(2)
+
+                If ContadorAccion = "" Then
+                    ContadorAccion = 0
+                End If
+
+                If Not SincronizarReferencia(Accion, Referencia, CInt(ContadorAccion), "") Then
+                    'Comento esto para que continue y actualice el resto
+                    'Return False
                 End If
 
             Loop While Not Salir

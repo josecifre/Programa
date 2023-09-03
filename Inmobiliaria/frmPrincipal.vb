@@ -449,7 +449,7 @@ Public Class frmPrincipal
             GL_ConfiguracionWeb.FTPClienteUsuario = Encriptacion.DesEncriptar(dtr("ftpClienteUsuario"), "LAMBDAPI")
             GL_ConfiguracionWeb.FTPClientePass = Encriptacion.DesEncriptar(dtr("ftpClientePass"), "LAMBDAPI")
             'End While
-
+            GL_ServidorFTP = "ftp://ftp.tresbits.es/clientes/venalia/" & DatosEmpresa.Codigo
 
         Else
             GL_ConfiguracionWeb.APP3B = False
@@ -465,6 +465,7 @@ Public Class frmPrincipal
             GL_ConfiguracionWeb.FTPClienteDireccion = ""
             GL_ConfiguracionWeb.FTPClienteUsuario = ""
             GL_ConfiguracionWeb.FTPClientePass = ""
+            GL_ServidorFTP = "ftp://ftp.tresbits.es/clientes/venalia/1"
         End If
         dtr.close()
         'bdlo.CerrarBD()
@@ -550,9 +551,9 @@ Public Class frmPrincipal
         comprobarPortales()
 
 
-        If DatosEmpresa.Codigo = 2 Then
-            IActualizarWeb.Visibility = BarItemVisibility.Always
-        End If
+        'If DatosEmpresa.Codigo = 2 Then
+        '    IActualizarWeb.Visibility = BarItemVisibility.Always
+        'End If
 
 
 
@@ -2861,7 +2862,7 @@ Public Class frmPrincipal
         End If
 
 
-        Dim Sel As String = "SELECT Referencia FROM Inmuebles WHERE CodigoEmpresa = " & DatosEmpresa.Codigo & " AND Baja = 0  AND Reservado = 0 AND ID_WP = 0   "
+        Dim Sel As String = "SELECT Referencia FROM Inmuebles WHERE COCINAOFFICE = 0 AND CodigoEmpresa = " & DatosEmpresa.Codigo & " AND ID_WP <> 0  and CocinaOffice = 0 and Tipo not in (select tipo  from tipo where TipoPrincipal = 'VIVIENDAS' )  "
         '" And referencia = '10001876' "
         'If DatosEmpresa.WordPress Then
         '    Sel = Sel & " AND id_wp = 0 "
@@ -2869,12 +2870,13 @@ Public Class frmPrincipal
 
         Sel = Sel & " ORDER BY Referencia DESC"
 
+        GL_TokenWP = ObtenerTokenWP()
 
         Dim bdin As New BaseDatos
         bdin.LlenarDataSet(Sel, "T")
 
         For i = 0 To bdin.ds.Tables("T").Rows.Count - 1
-            FuncionesGenerales.FuncionesBD.SincronizarReferencia("INSERT", bdin.ds.Tables("T").Rows(i)("Referencia"), "")
+            FuncionesGenerales.FuncionesBD.SincronizarReferencia("UPDATE", bdin.ds.Tables("T").Rows(i)("Referencia"), "", False)
         Next
 
 
@@ -3752,7 +3754,7 @@ Public Class frmPrincipal
         End If
 
 
-        'AsignarPrincipal()
+        AsignarPrincipal()
 
         ArreglarFotos2()
 
@@ -3816,6 +3818,8 @@ Public Class frmPrincipal
         Sel = "SELECT Contador, Referencia, Id_WP,FotoPrincipal FROM Inmuebles WHERE Id_WP <> 0 AND Baja = 0 and fotosweb > 0 and FotoPrincipal <> '' and Contador not in (  Select DISTINCT ContadorInmueble  from WP_FOTOS   WHERE AsignadoAWeb = 1) " &
             " and contador = 11737  ORDER BY Referencia DESC"
 
+        Sel = "select *  from Inmuebles where Id_WP <> 0 and contador not in (select ContadorInmueble from WP_FOTOS  )"
+
         Dim bdFotos As New BaseDatos
         Dim dtFotos As DataTable
         Dim aff As Integer
@@ -3844,15 +3848,19 @@ Public Class frmPrincipal
                     Sel = "UPDATE Inmuebles SET FotosWeb = " & CuantasSubidas & " WHERE Contador = " & ContadorInmueble
                     aff = BD_CERO.Execute(Sel)
                     Continue For
+
                 End If
 
 
                 Dim ListaFotos As String() = System.IO.Directory.GetFiles(CarpetaFotos, "*.jpg")
                 If ListaFotos.Count = 0 Then
-                    FotoPrincipal = ""
-                    Sel = "UPDATE Inmuebles SET FotosWeb = " & CuantasSubidas & " WHERE Contador = " & ContadorInmueble
-                    aff = BD_CERO.Execute(Sel)
+                    'FotoPrincipal = ""
+                    'Sel = "UPDATE Inmuebles SET FotosWeb = " & CuantasSubidas & " WHERE Contador = " & ContadorInmueble
+                    'aff = BD_CERO.Execute(Sel)
                     Continue For
+                Else
+                    Dim a As String = ""
+
                 End If
 
 
@@ -3889,8 +3897,8 @@ Public Class frmPrincipal
 
                 Next
 
-                If TengoPrincipal Then
-                    Dim LisaImas As New List(Of Integer)
+                'If TengoPrincipal Then
+                Dim LisaImas As New List(Of Integer)
                     Sel = "SELECT * FROM WP_FOTOS WHERE ContadorInmueble = " & ContadorInmueble
                     Dim bdConta As New BaseDatos
                     bdConta.LlenarDataSet(Sel, "T")
@@ -3902,7 +3910,7 @@ Public Class frmPrincipal
 
                     postData = SerializarPost(LisaImas, "REAL_HOMES_property_images")
                     WordPressPost(GL_ConfiguracionWeb.API_WP_Funcion_Propiedades & "/" & Id_WP, postData, False,, False)
-                End If
+                'End If
 
 
 
@@ -4175,21 +4183,31 @@ Public Class frmPrincipal
 
         GL_TokenWP = ObtenerTokenWP()
 
-        Sel = "SELECT * FROM WP_FOTOS m where Principal = 1 AND AsignadoAWeb = 0"
+        'Sel = "SELECT * FROM WP_FOTOS m where Principal = 1 AND AsignadoAWeb = 0"
 
-        Dim bdFotos As New BaseDatos
-        Dim dtFotos As DataTable
-        bdFotos.LlenarDataSet(Sel, "T")
-        dtFotos = bdFotos.ds.Tables("T")
+        Sel = "select *  from Inmuebles where Id_WP <> 0 and contador not in (select ContadorInmueble from WP_FOTOS where Principal = 1) and contador   in (select ContadorInmueble from WP_FOTOS where Principal = 0 )"
+
+        Dim bdF As New BaseDatos
+        Dim dtF As DataTable
+        bdF.LlenarDataSet(Sel, "T")
+        dtF = bdF.ds.Tables("T")
 
 
-        For i = 0 To dtFotos.Rows.Count - 1
+        For J = 0 To dtF.Rows.Count - 1
+
+            Sel = "SELECT TOP 1 * FROM WP_FOTOS m where ContadorInmueble =  " & dtF.Rows(J)("Contador")
+
+
+            Dim bdFotos As New BaseDatos
+            Dim dtFotos As DataTable
+            bdFotos.LlenarDataSet(Sel, "T")
+            dtFotos = bdFotos.ds.Tables("T")
 
             Dim postData As String
-            postData = SerializarPost(dtFotos(i)("IdFoto"), "featured_media")
-            WordPressPost(GL_ConfiguracionWeb.API_WP_Funcion_Propiedades & "/" & dtFotos(i)("IdProperty"), postData,,, False)
+            postData = SerializarPost(dtFotos(0)("IdFoto"), "featured_media")
+            WordPressPost(GL_ConfiguracionWeb.API_WP_Funcion_Propiedades & "/" & dtFotos(0)("IdProperty"), postData,,, False)
 
-            Sel = "UPDATE WP_FOTOS SET AsignadoAWeb = 1 WHERE IdFoto = " & dtFotos(i)("IdFoto")
+            Sel = "UPDATE WP_FOTOS SET AsignadoAWeb = 1, Principal = 1 WHERE IdFoto = " & dtFotos(0)("IdFoto")
             BD_CERO.Execute(Sel)
 
         Next
