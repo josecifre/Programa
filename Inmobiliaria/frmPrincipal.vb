@@ -9,6 +9,7 @@ Imports FuncionesGenerales.Funciones
 Imports WordPressPCL
 Imports WordPressPCL.Models
 Imports System.Net.Http
+Imports RestSharp
 
 Public Class frmPrincipal
 
@@ -2862,7 +2863,7 @@ Public Class frmPrincipal
         End If
 
 
-        Dim Sel As String = "SELECT Referencia FROM Inmuebles WHERE COCINAOFFICE = 0 AND CodigoEmpresa = " & DatosEmpresa.Codigo & " AND ID_WP <> 0  and CocinaOffice = 0 and Tipo not in (select tipo  from tipo where TipoPrincipal = 'VIVIENDAS' )  "
+        Dim Sel As String = "SELECT Referencia FROM Inmuebles WHERE  CodigoEmpresa = " & DatosEmpresa.Codigo & " AND ID_WP <> 0    "
         '" And referencia = '10001876' "
         'If DatosEmpresa.WordPress Then
         '    Sel = Sel & " AND id_wp = 0 "
@@ -2876,7 +2877,7 @@ Public Class frmPrincipal
         bdin.LlenarDataSet(Sel, "T")
 
         For i = 0 To bdin.ds.Tables("T").Rows.Count - 1
-            FuncionesGenerales.FuncionesBD.SincronizarReferencia("UPDATE", bdin.ds.Tables("T").Rows(i)("Referencia"), "", False)
+            FuncionesGenerales.FuncionesBD.SincronizarReferencia("UPDATE", bdin.ds.Tables("T").Rows(i)("Referencia"), 0, False)
         Next
 
 
@@ -2904,7 +2905,247 @@ Public Class frmPrincipal
 
         'Publicar()
     End Sub
+    Private Sub IQuitarFotoCasaLosReservados_ItemClick(sender As Object, e As ItemClickEventArgs) Handles IQuitarFotoCasaLosReservados.ItemClick
+        ActualizarTodoFC(False)
+        'QuitarDeFotocasaLosReservados(False)
+    End Sub
+    Private Sub ICuantosReservadosEnFotoCasa_ItemClick(sender As Object, e As ItemClickEventArgs) Handles ICuantosReservadosEnFotoCasa.ItemClick
+        QuitarDeFotocasaLosReservados(True)
+    End Sub
+    Private Sub ActualizarTodoFC(SoloSaberCuantosHayEnFotocasa As Boolean)
 
+        Dim CodigoAPI As String
+        Dim Sel As String
+
+        Sel = "SELECT Codigo FROM ClientePortales WHERE Portal = 'FotoCasa' and CodigoEmpresa = " & DatosEmpresa.Codigo
+        CodigoAPI = BD_CERO.Execute(Sel, False, "")
+
+        If CodigoAPI = "" Then
+            MensajeError("No puede DesPublicar en FotoCasa porque no tiene código API de acceso")
+            Return
+        End If
+
+        Dim Res As New clResultado
+        Res.StatusCode = 0
+
+        Try
+
+            Dim client = New RestClient(GL_wsRutaWs & "/publication/property")
+            Dim request = New RestRequest(Method.GET)
+
+            request.AddHeader("Inmofactory-Api-Key", CodigoAPI)
+            request.AddHeader("Cache-Control", "no-cache")
+            request.AddHeader("content-type", "application/json")
+
+            'Dim postData As String = SerializarPost(Inmueble)
+
+            'request.AddParameter("application/json", postData, ParameterType.RequestBody)
+
+            Dim response As IRestResponse = client.Execute(request)
+
+            If response.StatusCode = 200 Then
+
+                response.Content = Replace(response.Content, "\", "")
+                response.Content = Replace(response.Content, """", "")
+
+                Dim Inmus As List(Of clAgencyExternal)
+                Inmus = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of clAgencyExternal))(response.Content)
+
+
+                Dim ListaReservados As New List(Of String)
+
+                For i = 0 To Inmus.Count - 1
+                    ListaReservados.Add(Inmus(i).AgencyReference)
+                Next
+                ListaReservados.Sort()
+
+                If SoloSaberCuantosHayEnFotocasa Then
+                    MensajeInformacion("Hay " & ListaReservados.Count & " inmuebles en Fotocasa")
+                    Return
+                End If
+
+                If ListaReservados.Count = 0 Then
+                    MensajeInformacion("No hay inmuebles en Fotocasa")
+                    Return
+                Else
+                    If MsgBox("¿Confirma que quiere actualizar los " & ListaReservados.Count & " inmuebles de Fotocasa ?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                        Return
+                    End If
+
+
+                    Dim ds As New DataSet
+                    Dim dt2 As New DataTable("Listado")
+                    ds.Tables.Add(dt2)
+                    Dim dc1 As New DataColumn("Texto")
+                    dt2.Columns.Add(dc1)
+
+                    For Each Ref As String In ListaReservados
+                        Dim dr As DataRow = dt2.NewRow
+                        dr("Texto") = Ref.Trim
+                        dt2.Rows.Add(dr)
+
+                        'despublico fotocasa
+                        PublicarFotoCasaRest(Ref, CodigoAPI, True)
+
+                        Sel = "INSERT INTO FotocasaInmueblesQuitadosManual (Referencia,Fecha,Motivo) VALUES ('" & Ref & "',GETDATE(),'ACTUALIZACION BAJOS Y AGENCIA')"
+                        BD_CERO.Execute(Sel)
+
+                    Next
+
+                    Dim r As New rptListado
+
+                    r.DataSource = dt2
+                    r.DataMember = "Listado"
+                    r.par_Titulo.Value = "Listado de referencias que estaban Reservadas y se han quitado de Fotocasa. Fecha: " & Microsoft.VisualBasic.Format(Now, "dd/MM/yyyy HH:mm:ss")
+                    r.PageHeader.Visible = False
+                    r.par_Titulo.Visible = False
+                    r.ShowPreview()
+                End If
+
+            Else
+                Res.StatusCode = -1
+                Res = Newtonsoft.Json.JsonConvert.DeserializeObject(Of clResultado)(response.Content)
+                Res.Code = response.StatusDescription
+            End If
+
+        Catch ex5 As Net.WebException
+            Res.StatusCode = GL_CodigoErrorWebService
+            Res.Message = ex5.Message
+
+        Catch ex As Exception
+            Res.StatusCode = GL_CodigoErrorWebService
+            Res.Message = ex.Message
+        End Try
+
+        If Res.StatusCode < 0 Then
+            MensajeError("Hubo un error: " & vbCrLf & Res.Message)
+        Else
+            MensajeInformacion("Proceso finalizado correctamente")
+        End If
+
+
+
+    End Sub
+    Private Sub QuitarDeFotocasaLosReservados(SoloSaberCuantosReservadosHayEnFotocasa As Boolean)
+
+        Dim CodigoAPI As String
+        Dim Sel As String
+
+        Sel = "SELECT Codigo FROM ClientePortales WHERE Portal = 'FotoCasa' and CodigoEmpresa = " & DatosEmpresa.Codigo
+        CodigoAPI = BD_CERO.Execute(Sel, False, "")
+
+        If CodigoAPI = "" Then
+            MensajeError("No puede DesPublicar en FotoCasa porque no tiene código API de acceso")
+            Return
+        End If
+
+        Dim Res As New clResultado
+        Res.StatusCode = 0
+
+        Try
+
+            Dim client = New RestClient(GL_wsRutaWs & "/publication/property")
+            Dim request = New RestRequest(Method.GET)
+
+            request.AddHeader("Inmofactory-Api-Key", CodigoAPI)
+            request.AddHeader("Cache-Control", "no-cache")
+            request.AddHeader("content-type", "application/json")
+
+            'Dim postData As String = SerializarPost(Inmueble)
+
+            'request.AddParameter("application/json", postData, ParameterType.RequestBody)
+
+            Dim response As IRestResponse = client.Execute(request)
+
+            If response.StatusCode = 200 Then
+
+                response.Content = Replace(response.Content, "\", "")
+                response.Content = Replace(response.Content, """", "")
+
+                Dim Inmus As List(Of clAgencyExternal)
+                Inmus = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of clAgencyExternal))(response.Content)
+
+
+                Dim Cuantos As Integer
+
+                Dim ListaReservados As New List(Of String)
+
+                For i = 0 To Inmus.Count - 1
+                    Sel = "SELECT COUNT(*) FROM Inmuebles WHERE Referencia = '" & Inmus(i).AgencyReference & "' AND  Reservado = 1"
+                    Cuantos = BD_CERO.Execute(Sel, False, 0)
+                    If Cuantos = 1 Then
+                        ListaReservados.Add(Inmus(i).AgencyReference)
+                    End If
+                Next
+                ListaReservados.Sort()
+
+                If SoloSaberCuantosReservadosHayEnFotocasa Then
+                    MensajeInformacion("Hay " & ListaReservados.Count & " inmuebles reservados en Fotocasa")
+                    Return
+                End If
+
+                If ListaReservados.Count = 0 Then
+                    MensajeInformacion("No hay inmuebles reservados que estén en Fotocasa")
+                    Return
+                Else
+                    If MsgBox("¿Confirma que quiere quitar de Fotocasa los " & ListaReservados.Count & " inmuebles reservados que allí están publicados?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                        Return
+                    End If
+
+
+                    Dim ds As New DataSet
+                    Dim dt2 As New DataTable("Listado")
+                    ds.Tables.Add(dt2)
+                    Dim dc1 As New DataColumn("Texto")
+                    dt2.Columns.Add(dc1)
+
+                    For Each Ref As String In ListaReservados
+                        Dim dr As DataRow = dt2.NewRow
+                        dr("Texto") = Ref.Trim
+                        dt2.Rows.Add(dr)
+
+                        'despublico fotocasa
+                        DespublicarFotocasa(Ref, CodigoAPI, "RESERVA")
+
+                        Sel = "INSERT INTO FotocasaInmueblesQuitadosManual (Referencia,Fecha,Motivo) VALUES ('" & Ref & "',GETDATE(),'BAJA PROCESO MANUAL')"
+                        BD_CERO.Execute(Sel)
+
+                    Next
+
+                    Dim r As New rptListado
+
+                    r.DataSource = dt2
+                    r.DataMember = "Listado"
+                    r.par_Titulo.Value = "Listado de referencias que estaban Reservadas y se han quitado de Fotocasa. Fecha: " & Microsoft.VisualBasic.Format(Now, "dd/MM/yyyy HH:mm:ss")
+                    r.PageHeader.Visible = False
+                    r.par_Titulo.Visible = False
+                    r.ShowPreview()
+                End If
+
+            Else
+                Res.StatusCode = -1
+                Res = Newtonsoft.Json.JsonConvert.DeserializeObject(Of clResultado)(response.Content)
+                Res.Code = response.StatusDescription
+            End If
+
+        Catch ex5 As Net.WebException
+            Res.StatusCode = GL_CodigoErrorWebService
+            Res.Message = ex5.Message
+
+        Catch ex As Exception
+            Res.StatusCode = GL_CodigoErrorWebService
+            Res.Message = ex.Message
+        End Try
+
+        If Res.StatusCode < 0 Then
+            MensajeError("Hubo un error: " & vbCrLf & Res.Message)
+        Else
+            MensajeInformacion("Proceso finalizado correctamente")
+        End If
+
+
+
+    End Sub
     Private Sub Publicar()
         Me.Cursor = System.Windows.Forms.Cursors.WaitCursor
         pnlEnviado.Visible = True
@@ -3899,17 +4140,17 @@ Public Class frmPrincipal
 
                 'If TengoPrincipal Then
                 Dim LisaImas As New List(Of Integer)
-                    Sel = "SELECT * FROM WP_FOTOS WHERE ContadorInmueble = " & ContadorInmueble
-                    Dim bdConta As New BaseDatos
-                    bdConta.LlenarDataSet(Sel, "T")
-                    For k = 0 To bdConta.ds.Tables("T").Rows.Count - 1
-                        LisaImas.Add(bdConta.ds.Tables("T").Rows(k)("IdFoto"))
-                    Next
+                Sel = "SELECT * FROM WP_FOTOS WHERE ContadorInmueble = " & ContadorInmueble
+                Dim bdConta As New BaseDatos
+                bdConta.LlenarDataSet(Sel, "T")
+                For k = 0 To bdConta.ds.Tables("T").Rows.Count - 1
+                    LisaImas.Add(bdConta.ds.Tables("T").Rows(k)("IdFoto"))
+                Next
 
-                    Dim postData As String
+                Dim postData As String
 
-                    postData = SerializarPost(LisaImas, "REAL_HOMES_property_images")
-                    WordPressPost(GL_ConfiguracionWeb.API_WP_Funcion_Propiedades & "/" & Id_WP, postData, False,, False)
+                postData = SerializarPost(LisaImas, "REAL_HOMES_property_images")
+                WordPressPost(GL_ConfiguracionWeb.API_WP_Funcion_Propiedades & "/" & Id_WP, postData, False,, False)
                 'End If
 
 
@@ -4571,6 +4812,101 @@ Public Class frmPrincipal
 
         MensajeInformacion("FIN")
     End Sub
+
+
+    'Private Sub btnComprobarInmueblesWP_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btnComprobarInmueblesWP.ItemClick
+
+    '    If MsgBox("¿Confirma que quiere comprobar todos los inmuebles?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+    '        Return
+    '    End If
+
+
+    '    Dim Sel As String
+    '    Dim Res As Tablas.clResultado
+    '    Dim ResInmuebles As New List(Of WordPress.cl_InmueblesFromWP)
+    '    Dim SourceURL As String = ""
+
+    '    GL_TokenWP = ObtenerTokenWP()
+
+
+    '    Dim Salir As Boolean = False
+    '    Dim i As Integer = 0
+    '    Do
+    '        Res = WordPressGet("properties?per_page=5&offset=" & i, False)
+
+    '        If Res.Codigo = 0 Then
+    '            ResInmuebles = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of WordPress.cl_InmueblesFromWP))(Res.Mensaje)
+
+    '            Dim pp As Object
+    '            ResInmuebles = Newtonsoft.Json.JsonConvert.DeserializeObject(Res.Mensaje, List(Of WordPress.cl_InmueblesFromWP))
+
+    '            For k = 0 To pp.Count - 1
+    '                Dim p As WordPress.cl_InmueblesFromWP
+    '                p = pp(k)
+    '                Dim a As String = ""
+    '                'p.REAL_HOMES_property_id
+    '                'Sel = "SELECT * FROM Inmuebles WHERE Referencia = " & ResInmuebles(k).Property_Meta.Property_Meta.REAL_HOMES_property_id
+    '            Next
+
+
+    '            If ResInmuebles.Count = 0 Then
+    '                Salir = True
+    '            End If
+
+    '        Else
+
+    '            Salir = True
+    '        End If
+
+    '        i = i + 1
+
+    '    Loop While Not Salir
+
+
+
+
+    '    'sel = "SELECT Referencia FROM Inmuebles WHERE COCINAOFFICE = 0 AND CodigoEmpresa = " & DatosEmpresa.Codigo & " AND ID_WP <> 0  and CocinaOffice = 0 and Tipo not in (select tipo  from tipo where TipoPrincipal = 'VIVIENDAS' )  "
+    '    ''" And referencia = '10001876' "
+    '    ''If DatosEmpresa.WordPress Then
+    '    ''    Sel = Sel & " AND id_wp = 0 "
+    '    ''End If
+
+    '    'Sel = Sel & " ORDER BY Referencia DESC"
+
+    '    'GL_TokenWP = ObtenerTokenWP()
+
+    '    'Dim bdin As New BaseDatos
+    '    'bdin.LlenarDataSet(Sel, "T")
+
+    '    'For i = 0 To bdin.ds.Tables("T").Rows.Count - 1
+    '    '    FuncionesGenerales.FuncionesBD.SincronizarReferencia("UPDATE", bdin.ds.Tables("T").Rows(i)("Referencia"), "", False)
+    '    'Next
+
+
+
+    '    'Sel = "SELECT Id_WP FROM Inmuebles WHERE Id_WP <> 0"
+    '    'bdin = New BaseDatos
+    '    'bdin.LlenarDataSet(Sel, "T")
+
+    '    'For i = 0 To bdin.ds.Tables("T").Rows.Count - 1
+    '    '    WP_Eliminar_General("Inmuebles", bdin.ds.Tables("T").Rows(i)("Id_WP"), True)
+    '    'Next
+
+
+    '    MensajeInformacion("Fin")
+
+
+    '    'Sel = "INSERT INTO AccionesPendientes (Accion,Tabla,Referencia,CodigoEmpresa,Codigo,Fecha, Pendiente, Aleatorio) " &
+    '    '                " SELECT 'INSERT','INMUEBLES',Referencia," & DatosEmpresa.Codigo & ",'', " & GL_SQL_GETDATE & "," & GL_SQL_VALOR_1 & ",'' FROM Inmuebles"
+
+    '    'BD_CERO.Execute(Sel)
+
+
+
+
+
+    '    'Publicar()
+    'End Sub
 
 
 

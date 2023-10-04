@@ -171,6 +171,7 @@ Partial Class frmPrincipal
         Me.btnWP_Otros = New DevExpress.XtraBars.BarButtonItem()
         Me.btnTipos = New DevExpress.XtraBars.BarButtonItem()
         Me.btnWP_Poblaciones = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnComprobarInmueblesWP = New DevExpress.XtraBars.BarButtonItem()
         Me.ribbonImageCollectionLarge = New DevExpress.Utils.ImageCollection(Me.components)
         Me.pgInicio = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.Salir = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -224,6 +225,8 @@ Partial Class frmPrincipal
         Me.picClientes = New System.Windows.Forms.PictureBox()
         Me.BarButtonItem19 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
+        Me.IQuitarFotoCasaLosReservados = New DevExpress.XtraBars.BarButtonItem()
+        Me.ICuantosReservadosEnFotoCasa = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.appMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.popupControlContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -268,10 +271,10 @@ Partial Class frmPrincipal
         Me.ribbonControl.ExpandCollapseItem.Id = 0
         Me.ribbonControl.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.ribbonControl.Images = Me.ribbonImageCollection
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.iNew, Me.iOpen, Me.iClose, Me.iFind, Me.iSave, Me.iSaveAs, Me.iExit, Me.iCalificacion, Me.iClasificacion, Me.siStatus, Me.siInfo, Me.alignButtonGroup, Me.iBoldFontStyle, Me.iItalicFontStyle, Me.iUnderlinedFontStyle, Me.fontStyleButtonGroup, Me.iLeftTextAlign, Me.iCenterTextAlign, Me.iRightTextAlign, Me.rgbiSkins, Me.Iderechos, Me.IDelegaciones, Me.IDiarios, Me.IIntereses, Me.ITipoExpediente, Me.IInteresesOpcionesCalculo, Me.IPaisesProvinciasPoblaciones, Me.ILeyes, Me.IUsuarios, Me.IRepresentacion, Me.IAfecciones, Me.ICultivos, Me.rgbOrganismos, Me.iFincas, Me.iTitulares, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem2, Me.MunicipiosButtonGroup, Me.BarButtonItem3, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonGroup1, Me.BarButtonGroup2, Me.BarButtonGroup3, Me.BarButtonGroup4, Me.BarButtonGroup5, Me.IClientes, Me.IInmuebles, Me.IAlarmas, Me.BarCheckItem1, Me.BarCheckItem2, Me.BarButtonItem14, Me.BarButtonItem15, Me.ITextosEnvios, Me.IEmpleados, Me.IConfiguracionEmpresas, Me.IFormasPago, Me.IAgrupaciones, Me.IAlmacenes, Me.IFabricantes, Me.IFamilias, Me.ISubFamilias, Me.IGamas, Me.IMarcas, Me.INacionalidades, Me.ISeriesFacturacion, Me.ITarifas, Me.ITipoIVA, Me.IColores, Me.IEstilos, Me.IPropietarios, Me.IEstadisticas, Me.IAgrupacion, Me.IComoConociste, Me.IEstado, Me.IOrientacion, Me.IPoblacion, Me.IProvincias, Me.Itipo, Me.IZona, Me.IEmail, Me.IEstadisticasGlobales, Me.IListadoLlamadas, Me.btnJuntarInmuebles, Me.btnFotosPC, Me.btnFotosPCBaja, Me.IMensajesAPP, Me.IUsuariosAPP, Me.IEnvioNovedades, Me.txtUsuario, Me.IConfiguracion, Me.IGenerarBDAccess, Me.IEnviarDatos, Me.IVerEnvios, Me.BarButtonItem12, Me.BarButtonItem13, Me.IBBDD, Me.IImagenes, Me.IPublicarTodosLosInmuebles, Me.IConfiguracionPortales, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.IElegirTipo, Me.IElegirTipoVenta, Me.IListadoCartel, Me.IPrestamos, Me.IClientesM, Me.IInmueblesM, Me.IPropietariosM, Me.IPrestamosM, Me.IAlarmasM, Me.btnContadorOrigen, Me.IListadoComoConocio, Me.IActualizarWeb, Me.btnTipoPrincipalWeb, Me.btnWPSubirTodasLasFOTOS, Me.btnTipoSecundarioWeb, Me.btnTipoVenta, Me.btnWP_Otros, Me.btnTipos, Me.btnWP_Poblaciones})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.iNew, Me.iOpen, Me.iClose, Me.iFind, Me.iSave, Me.iSaveAs, Me.iExit, Me.iCalificacion, Me.iClasificacion, Me.siStatus, Me.siInfo, Me.alignButtonGroup, Me.iBoldFontStyle, Me.iItalicFontStyle, Me.iUnderlinedFontStyle, Me.fontStyleButtonGroup, Me.iLeftTextAlign, Me.iCenterTextAlign, Me.iRightTextAlign, Me.rgbiSkins, Me.Iderechos, Me.IDelegaciones, Me.IDiarios, Me.IIntereses, Me.ITipoExpediente, Me.IInteresesOpcionesCalculo, Me.IPaisesProvinciasPoblaciones, Me.ILeyes, Me.IUsuarios, Me.IRepresentacion, Me.IAfecciones, Me.ICultivos, Me.rgbOrganismos, Me.iFincas, Me.iTitulares, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem2, Me.MunicipiosButtonGroup, Me.BarButtonItem3, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonGroup1, Me.BarButtonGroup2, Me.BarButtonGroup3, Me.BarButtonGroup4, Me.BarButtonGroup5, Me.IClientes, Me.IInmuebles, Me.IAlarmas, Me.BarCheckItem1, Me.BarCheckItem2, Me.BarButtonItem14, Me.BarButtonItem15, Me.ITextosEnvios, Me.IEmpleados, Me.IConfiguracionEmpresas, Me.IFormasPago, Me.IAgrupaciones, Me.IAlmacenes, Me.IFabricantes, Me.IFamilias, Me.ISubFamilias, Me.IGamas, Me.IMarcas, Me.INacionalidades, Me.ISeriesFacturacion, Me.ITarifas, Me.ITipoIVA, Me.IColores, Me.IEstilos, Me.IPropietarios, Me.IEstadisticas, Me.IAgrupacion, Me.IComoConociste, Me.IEstado, Me.IOrientacion, Me.IPoblacion, Me.IProvincias, Me.Itipo, Me.IZona, Me.IEmail, Me.IEstadisticasGlobales, Me.IListadoLlamadas, Me.btnJuntarInmuebles, Me.btnFotosPC, Me.btnFotosPCBaja, Me.IMensajesAPP, Me.IUsuariosAPP, Me.IEnvioNovedades, Me.txtUsuario, Me.IConfiguracion, Me.IGenerarBDAccess, Me.IEnviarDatos, Me.IVerEnvios, Me.BarButtonItem12, Me.BarButtonItem13, Me.IBBDD, Me.IImagenes, Me.IPublicarTodosLosInmuebles, Me.IConfiguracionPortales, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.IElegirTipo, Me.IElegirTipoVenta, Me.IListadoCartel, Me.IPrestamos, Me.IClientesM, Me.IInmueblesM, Me.IPropietariosM, Me.IPrestamosM, Me.IAlarmasM, Me.btnContadorOrigen, Me.IListadoComoConocio, Me.IActualizarWeb, Me.btnTipoPrincipalWeb, Me.btnWPSubirTodasLasFOTOS, Me.btnTipoSecundarioWeb, Me.btnTipoVenta, Me.btnWP_Otros, Me.btnTipos, Me.btnWP_Poblaciones, Me.btnComprobarInmueblesWP, Me.IQuitarFotoCasaLosReservados, Me.ICuantosReservadosEnFotoCasa})
         Me.ribbonControl.LargeImages = Me.ribbonImageCollectionLarge
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 204
+        Me.ribbonControl.MaxItemId = 207
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.PageHeaderItemLinks.Add(Me.txtUsuario)
         Me.ribbonControl.PageHeaderItemLinks.Add(Me.ribbonControl.ExpandCollapseItem)
@@ -1400,6 +1403,12 @@ Partial Class frmPrincipal
         Me.btnWP_Poblaciones.Id = 203
         Me.btnWP_Poblaciones.Name = "btnWP_Poblaciones"
         '
+        'btnComprobarInmueblesWP
+        '
+        Me.btnComprobarInmueblesWP.Caption = "Comprobar Inmuebles WP"
+        Me.btnComprobarInmueblesWP.Id = 204
+        Me.btnComprobarInmueblesWP.Name = "btnComprobarInmueblesWP"
+        '
         'ribbonImageCollectionLarge
         '
         Me.ribbonImageCollectionLarge.ImageSize = New System.Drawing.Size(32, 32)
@@ -1596,6 +1605,9 @@ Partial Class frmPrincipal
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnTipoVenta)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnWP_Otros)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnWP_Poblaciones)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.btnComprobarInmueblesWP)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.IQuitarFotoCasaLosReservados)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.ICuantosReservadosEnFotoCasa)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "TresBits"
         '
@@ -1989,6 +2001,18 @@ Partial Class frmPrincipal
         Me.BarButtonItem20.Id = 197
         Me.BarButtonItem20.Name = "BarButtonItem20"
         '
+        'IQuitarFotoCasaLosReservados
+        '
+        Me.IQuitarFotoCasaLosReservados.Caption = "Quitar FotoCasa Los Reservados"
+        Me.IQuitarFotoCasaLosReservados.Id = 205
+        Me.IQuitarFotoCasaLosReservados.Name = "IQuitarFotoCasaLosReservados"
+        '
+        'ICuantosReservadosEnFotoCasa
+        '
+        Me.ICuantosReservadosEnFotoCasa.Caption = "Cuantos Reservados En FotoCasa"
+        Me.ICuantosReservadosEnFotoCasa.Id = 206
+        Me.ICuantosReservadosEnFotoCasa.Name = "ICuantosReservadosEnFotoCasa"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2243,4 +2267,7 @@ Partial Class frmPrincipal
     Friend WithEvents btnWP_Otros As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnTipos As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnWP_Poblaciones As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnComprobarInmueblesWP As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents IQuitarFotoCasaLosReservados As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ICuantosReservadosEnFotoCasa As DevExpress.XtraBars.BarButtonItem
 End Class

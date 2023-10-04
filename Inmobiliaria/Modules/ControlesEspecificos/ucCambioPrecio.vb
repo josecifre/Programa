@@ -201,6 +201,30 @@ Public Class ucCambioPrecio
         End If
         ActualizarPreciosPropietario(GL_CambiosPrecios)
 
+
+        'If DatosEmpresa.WordPress Then
+        '    Dim Sel As String
+        '    Dim ID_WP_Pasado As Integer = 0
+        '    Sel = "SELECT Id_WP FROM Inmuebles WHERE Contador = " & GL_CambiosPrecios.ContadorInmueble
+        '    ID_WP_Pasado = BD_CERO.Execute(Sel, False, 0)
+
+        '    If ID_WP_Pasado <> 0 Then
+        '        Dim Referencia As String
+        '        Sel = "SELECT Referencia FROM Inmuebles WHERE Contador = " & GL_CambiosPrecios.ContadorInmueble
+        '        Referencia = BD_CERO.Execute(Sel, False, "")
+
+        '        If Referencia <> "" Then
+        '            FuncionesBD.Accion("UPDATE", "Inmuebles", Referencia)
+        '        End If
+        '        'Publicar piso antes de entrar en inmuebles
+
+
+        '    End If
+
+        'End If
+
+
+
         RefrescarDatosDesdeBdInmuebles(True)
     End Sub
 
@@ -230,10 +254,12 @@ Public Class ucCambioPrecio
             End If
             Sel &= ", FechaUltimaLlamadaPropietario = " & GL_SQL_GETDATE
             Sel &= " WHERE Contador = " & CambiosPre.ContadorInmueble
+            BD_CERO.Execute(Sel)
+
 
             FuncionesBD.Accion("UPDATE", "Inmuebles", BD_CERO.Execute("SELECT Referencia FROM Inmuebles WHERE CONTADOR=" & CambiosPre.ContadorInmueble, False), False)
-            Return BD_CERO.Execute(Sel)
 
+            Return 0
         Catch ex As Exception
             Return -1
         End Try

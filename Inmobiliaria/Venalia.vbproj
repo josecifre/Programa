@@ -375,6 +375,7 @@
     </Compile>
     <Compile Include="FuncionesGenerales\Actualizacion.vb" />
     <Compile Include="FuncionesGenerales\ConexionWS_Rest.vb" />
+    <Compile Include="FuncionesGenerales\Fotocasa.vb" />
     <Compile Include="FuncionesGenerales\MarcaAgua.vb" />
     <Compile Include="FuncionesGenerales\CheckMarksSelection.vb" />
     <Compile Include="FuncionesGenerales\ConsultasBaseDatos.vb" />

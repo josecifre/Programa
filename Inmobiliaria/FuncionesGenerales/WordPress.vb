@@ -9,7 +9,199 @@ Imports WordPressPCL.Models
 
 Module WordPress
 #Region "Generales"
+    Public Class cl_InmueblesFromWP
 
+        Public Class Rootobject
+            Public Property id As Integer
+            Public Property _date As Date
+            Public Property date_gmt As Date
+            Public Property guid As Guid
+            Public Property modified As Date
+            Public Property modified_gmt As Date
+            Public Property slug As String
+            Public Property status As String
+            Public Property type As String
+            Public Property link As String
+            Public Property title As Title
+            Public Property content As Content
+            Public Property excerpt As Excerpt
+            Public Property author As Integer
+            Public Property featured_media As Integer
+            Public Property parent As Integer
+            Public Property menu_order As Integer
+            Public Property comment_status As String
+            Public Property ping_status As String
+            Public Property template As String
+            Public Property característicaspropiedad() As Object
+            Public Property tipospropiedad() As Integer
+            Public Property ciudadespropiedad() As Integer
+            Public Property estatuspropiedad() As Integer
+            Public Property property_meta As Property_Meta
+            Public Property _links As _Links
+        End Class
+
+        Public Class Guid
+            Public Property rendered As String
+        End Class
+
+        Public Class Title
+            Public Property rendered As String
+        End Class
+
+        Public Class Content
+            Public Property rendered As String
+            Public Property _protected As Boolean
+        End Class
+
+        Public Class Excerpt
+            Public Property rendered As String
+            Public Property _protected As Boolean
+        End Class
+
+        Public Class Property_Meta
+            Public Property REAL_HOMES_property_size As String
+            Public Property REAL_HOMES_property_size_postfix As String
+            Public Property REAL_HOMES_property_lot_size As String
+            Public Property REAL_HOMES_property_lot_size_postfix As String
+            Public Property REAL_HOMES_property_bedrooms As String
+            Public Property REAL_HOMES_property_bathrooms As String
+            Public Property REAL_HOMES_property_garage As String
+            Public Property REAL_HOMES_property_id As String
+            Public Property REAL_HOMES_property_year_built As String
+            Public Property REAL_HOMES_featured As String
+            Public Property REAL_HOMES_additional_details_list() As Object
+            Public Property rvr_bulk_pricing() As Object
+            Public Property rvr_custom_reserved_dates() As Object
+            Public Property rvr_seasonal_pricing() As Object
+            Public Property rvr_additional_fees() As Object
+            Public Property rvr_govt_tax As String
+            Public Property rvr_service_charges As String
+            Public Property rvr_guests_capacity As String
+            Public Property rvr_book_child_as As String
+            Public Property rvr_min_stay As String
+            Public Property rvr_guests_capacity_extend As String
+            Public Property rvr_extra_guest_price As String
+            Public Property rvr_accommodation() As Object
+            Public Property rvr_instant_booking As String
+            Public Property rvr_property_owner As String
+            Public Property rvr_outdoor_features() As Object
+            Public Property rvr_surroundings() As Object
+            Public Property rvr_included() As Object
+            Public Property rvr_not_included() As Object
+            Public Property rvr_policies() As Object
+            Public Property REAL_HOMES_property_location As REAL_HOMES_Property_Location
+            Public Property REAL_HOMES_property_address As String
+            Public Property REAL_HOMES_property_map As String
+            Public Property REAL_HOMES_property_images() As Object
+            Public Property REAL_HOMES_change_gallery_slider_type As String
+            Public Property REAL_HOMES_gallery_slider_type As String
+            Public Property inspiry_floor_plans() As Object
+            Public Property inspiry_video_group() As Object
+            Public Property REAL_HOMES_360_virtual_tour As String
+            Public Property REAL_HOMES_tour_video_url As String
+            Public Property REAL_HOMES_tour_video_image() As Object
+            Public Property REAL_HOMES_agent_display_option As String
+            Public Property REAL_HOMES_agents() As String
+            Public Property REAL_HOMES_energy_class As String
+            Public Property REAL_HOMES_energy_performance As String
+            Public Property REAL_HOMES_epc_current_rating As String
+            Public Property REAL_HOMES_epc_potential_rating As String
+            Public Property ere_property_schedule_tour As String
+            Public Property ere_property_schedule_time_slots As String
+            Public Property ere_property_schedule_description As String
+            Public Property REAL_HOMES_sticky As String
+            Public Property inspiry_property_label As String
+            Public Property inspiry_property_label_color As String
+            Public Property inspiry_property_tax As String
+            Public Property inspiry_additional_fee As String
+            Public Property REAL_HOMES_attachments() As Object
+            Public Property inspiry_property_owner_name As String
+            Public Property inspiry_property_owner_contact As String
+            Public Property inspiry_property_owner_address As String
+            Public Property REAL_HOMES_property_private_note As String
+            Public Property inspiry_message_to_reviewer As String
+            Public Property REAL_HOMES_add_in_slider As String
+            Public Property REAL_HOMES_slider_image() As Object
+            Public Property REAL_HOMES_page_banner_image() As Object
+            Public Property REAL_HOMES_hide_property_advance_search As String
+            Public Property inspiry_estado As String
+            Public Property REAL_HOMES_custom_header_display As String
+            Public Property REAL_HOMES_custom_header_position As String
+            Public Property REAL_HOMES_custom_footer_display As String
+            Public Property REAL_HOMES_hide_advance_search As String
+            Public Property REAL_HOMES_custom_search_form As String
+            Public Property REAL_HOMES_search_form_margin_top As String
+            Public Property REAL_HOMES_search_form_margin_bottom As String
+        End Class
+
+        Public Class REAL_HOMES_Property_Location
+            Public Property latitude As String
+            Public Property longitude As String
+            Public Property zoom As String
+        End Class
+
+        Public Class _Links
+            Public Property self() As Self
+            Public Property collection() As Collection
+            Public Property about() As About
+            Public Property author() As Author
+            Public Property replies() As Reply
+            Public Property versionhistory() As VersionHistory
+            Public Property predecessorversion() As PredecessorVersion
+            Public Property wpattachment() As WpAttachment
+            Public Property wpterm() As WpTerm
+            Public Property curies() As Cury
+        End Class
+
+        Public Class Self
+            Public Property href As String
+        End Class
+
+        Public Class Collection
+            Public Property href As String
+        End Class
+
+        Public Class About
+            Public Property href As String
+        End Class
+
+        Public Class Author
+            Public Property embeddable As Boolean
+            Public Property href As String
+        End Class
+
+        Public Class Reply
+            Public Property embeddable As Boolean
+            Public Property href As String
+        End Class
+
+        Public Class VersionHistory
+            Public Property count As Integer
+            Public Property href As String
+        End Class
+
+        Public Class PredecessorVersion
+            Public Property id As Integer
+            Public Property href As String
+        End Class
+
+        Public Class WpAttachment
+            Public Property href As String
+        End Class
+
+        Public Class WpTerm
+            Public Property taxonomy As String
+            Public Property embeddable As Boolean
+            Public Property href As String
+        End Class
+
+        Public Class Cury
+            Public Property name As String
+            Public Property href As String
+            Public Property templated As Boolean
+        End Class
+
+    End Class
     Public Function WP_Alta_Modificar_General(Tabla As String, Valor As String, Id_WP As Integer, Optional ObtenerToken As Boolean = True, Optional Eliminar As Boolean = False, Optional IdParent As Integer = 0) As Integer
 
         Dim Res2 As New Tablas.clWPCreado
@@ -133,6 +325,94 @@ Module WordPress
 
     End Function
 #End Region
+    Public Function WordPressGet(Funcion As String, Optional ObtenerToken As Boolean = True) As Tablas.clResultado
+
+        Dim Res As New Tablas.clResultado
+
+        Try
+
+            If ObtenerToken Or IsNothing(GL_TokenWP) Then
+                GL_TokenWP = ObtenerTokenWP()
+            End If
+
+
+            System.Net.ServicePointManager.SecurityProtocol = Net.SecurityProtocolType.Tls12 Or Net.SecurityProtocolType.Tls11 Or Net.SecurityProtocolType.Tls
+
+
+            Dim request As RestRequest
+
+            request = New RestRequest(Method.GET)
+
+            'GL_ConfiguracionWeb.API_WP = "https://inmobiliariauim.com/wp-json/wp/v2/"
+
+            Dim urlLlamda As String
+            'If DatosEmpresa.Codigo = 2 Then
+            '    urlLlamda = GL_ConfiguracionWeb.API_WP.Replace("/wp-json", "/index.php/wp-json")
+            'Else
+            '    urlLlamda = GL_ConfiguracionWeb.API_WP
+            'End If
+
+            urlLlamda = GL_ConfiguracionWeb.API_WP
+
+            Dim client = New RestClient(urlLlamda & Funcion)
+            'GL_TokenWP = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcHJ1ZWJhc2lubW9iaWxpYXJpYXMudHJlc2JpdHMuZXMiLCJpYXQiOjE1OTUxNTU0MTEsIm5iZiI6MTU5NTE1NTQxMSwiZXhwIjoxNTk1NzYwMjExLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.VYvvcryo_Jes6hRle_VviVoQV841VI0eBdilnYbeBb4"
+            request.AddHeader("Authorization", "Bearer " + GL_TokenWP)
+            'If Funcion.ToUpper = "MEDIA" Then
+            '    request.AddHeader("Content-Type", "image/png")
+            '    request.AddHeader("Content-Disposition", "attachment; filename=tmp")
+            '    'request.AddHeader("Content-Disposition", "form-data; filename=C:\Compartida\Jose\admin.png")
+            '    'request.AddFile("media", "C:\Compartida\Venalia2\Fotos\2\27189\1.jpg")
+
+            '    'Dim s As Stream = File.OpenRead("C:\Compartida\Venalia2\Fotos\2\27189\1.jpg")
+            '    'request.AddFileBytes("tmp", IO.File.ReadAllBytes("C:\Compartida\Venalia2\Fotos\2\27189\1.jpg"), "ll", "image/jpg")
+            '    'request.AddFileBytes("tmp", IO.File.ReadAllBytes("C:\Compartida\Jose\admin.png"), "C:\Compartida\Jose\admin.png", "image/png")
+            '    'request.AddFile("tmp", "C:\Compartida\Jose\admin.png")
+            '    'admin.png
+            '    'request.AddFile("tmp", IO.File.ReadAllBytes("C:\Compartida\Venalia2\Fotos\2\27189\2tt.jpg"), "ll", "image/jpg")
+            '    'request.AddHeader("data", "C:\Compartida\Jose\admin.png")
+            'Else
+
+            'End If
+
+            request.AddHeader("content-type", "application/json")
+
+            'If PostData <> "" Then
+            '    request.AddParameter("application/json", PostData, ParameterType.RequestBody)
+            '    'request.AddBody(PostData)
+            'End If
+            '   request.AddParameter("application/json", "{""""Email"""":""""pruebas1@idoneapp.com""""}", ParameterType.RequestBody)
+            Dim response As IRestResponse = client.Execute(request)
+
+
+            If response.StatusCode = 200 Or response.StatusCode = 201 Then
+                Res.Mensaje = response.Content
+                Res.Codigo = 0
+                Res.InformacionAdicional = ""
+            Else
+                Res.Mensaje = response.Content
+                Res.Codigo = -1
+                Res.InformacionAdicional = response.StatusDescription
+            End If
+
+        Catch ex4 As ServiceModel.FaultException(Of Tablas.clResultado)
+            Res.Codigo = ex4.Code.ToString
+            Res.Mensaje = ex4.Reason.ToString
+
+        Catch ex5 As Net.WebException
+            Res.Codigo = -1
+            Res.Mensaje = ex5.Message
+
+        Catch ex As Exception
+            Res.Codigo = -2
+            Res.Mensaje = ex.Message
+        End Try
+
+        Return Res
+
+
+
+
+    End Function
     Public Function WordPressPost(Funcion As String, PostData As String, Optional Delete As Boolean = False, Optional put As Boolean = False, Optional ObtenerToken As Boolean = True) As Tablas.clResultado
 
         Dim Res As New Tablas.clResultado
@@ -948,7 +1228,7 @@ Module WordPress
             End If
         End If
 
-            Dim postData As String
+        Dim postData As String
         Dim Funcion As String
 
         Funcion = GL_ConfiguracionWeb.API_WP_Funcion_Propiedades
@@ -991,15 +1271,21 @@ Module WordPress
             Id_WP = BD_CERO.Execute(Sel, False, 0)
         End If
 
+        If Id_WP = 0 Then
+            Return True
+        End If
+
         Dim postData As String
         Dim Funcion As String
 
         Funcion = GL_ConfiguracionWeb.API_WP_Funcion_Propiedades
 
         If PonerEnPrincipal Then
-            postData = SerializarPost(1, "REAL_HOMES_featured")
+            postData = "{""property_meta"": {""REAL_HOMES_featured"":""1""}} "
+            'postData = SerializarPost("1", """property_meta"": {""REAL_HOMES_featured"":""1""}REAL_HOMES_featured")
         Else
-            postData = SerializarPost(0, "REAL_HOMES_featured")
+            'postData = SerializarPost("0", "REAL_HOMES_featured")
+            postData = "{""property_meta"": {""REAL_HOMES_featured"":""0""}} "
         End If
         Res = WordPressPost(Funcion & "/" & Id_WP, postData)
 
@@ -1078,20 +1364,20 @@ Module WordPress
         Dim wp_REALHOMESAdditionalDetails2 As Tablas.cl_wp_REALHOMESAdditionalDetails = WP_ObtenerListaDetails(Inmueble)
 
         'Sel = "SELECT Id_WP FROM Tipo WHERE Tipo = '" & Funciones.pf_ReplaceComillas(Inmueble.Tipo) & "'"
-        'Dim Id_Tipo As Integer = BD_CERO.Execute(Sel, False)
-        'If Id_Tipo = 0 Then
-        '    Id_Tipo = WP_Alta_Modificar_General("Tipo", Inmueble.Tipo, 0, False)
-        '    If Id_Tipo <= 0 Then
-        '        GL_Error = "Error"
-        '        Return Nothing
-        '    Else
-        '        Sel = "UPDATE Tipo SET ID_WP = " & Id_Tipo & " WHERE Tipo = '" & Funciones.pf_ReplaceComillas(Inmueble.Tipo) & "'"
-        '        BD_CERO.Execute(Sel)
-        '    End If
+            'Dim Id_Tipo As Integer = BD_CERO.Execute(Sel, False)
+            'If Id_Tipo = 0 Then
+            '    Id_Tipo = WP_Alta_Modificar_General("Tipo", Inmueble.Tipo, 0, False)
+            '    If Id_Tipo <= 0 Then
+            '        GL_Error = "Error"
+            '        Return Nothing
+            '    Else
+            '        Sel = "UPDATE Tipo SET ID_WP = " & Id_Tipo & " WHERE Tipo = '" & Funciones.pf_ReplaceComillas(Inmueble.Tipo) & "'"
+            '        BD_CERO.Execute(Sel)
+            '    End If
 
-        'End If
+            'End If
 
-        Dim Id_Tipo As Integer
+            Dim Id_Tipo As Integer
         Id_Tipo = Obtener_Id_WP_Tipo(Inmueble)
 
         Dim Id_TipoVenta As Integer

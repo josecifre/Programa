@@ -68,6 +68,8 @@
         cmbClientes.Focus()
 
         mskFechaVencimiento.Enabled = chkReservado.Checked
+
+        GL_InmuebleReservado = ""
     End Sub
 
 #Region "Mantenimiento Reservas"
@@ -158,7 +160,7 @@
                 bd.Execute("UPDATE Inmuebles SET Reservado =" & FuncionesGenerales.Funciones.pf_ReplaceTrueFalse(chkReservado.Checked) & "," & _
                        "FechaReservado=" & FVen & _
                        " WHERE Contador=" & ContadorInmueble)
-                GL_InmuebleReservado = FuncionesGenerales.Funciones.pf_ReplaceTrueFalse(chkReservado.Checked)
+                GL_InmuebleReservado = "SI"
                 FuncionesBD.Accion("UPDATE", "Inmuebles", BD_CERO.Execute("SELECT Referencia FROM Inmuebles WHERE CONTADOR=" & ContadorInmueble, False), False, Reserva:=True, Valor:=1)
 
 
@@ -168,7 +170,7 @@
                 bd.Execute("UPDATE Inmuebles SET Reservado =0 ,FechaReservado =NULL WHERE Contador=" & ContadorInmueble)
                 FuncionesBD.Accion("UPDATE", "Inmuebles", BD_CERO.Execute("SELECT Referencia FROM Inmuebles WHERE CONTADOR=" & ContadorInmueble, False), False, Reserva:=True, Valor:=0)
 
-                GL_InmuebleReservado = ""
+                GL_InmuebleReservado = "NO"
                 'BD_CERO.Execute("" & GL_SQL_DELETE & "FROM NuevasReservasQuitadas WHERE ContadorInmueble = " & ContadorInmueble)
                 'BD_CERO.Execute("INSERT INTO NuevasReservasQuitadas VALUES ( " & ContadorInmueble & " , " & gl_sql_getdate & ")")
                 'bd.Execute("INSERT INTO ReservasRegistro VALUES ('BORRADO','" & Today & "'," & ContadorInmueble & "," & GL_CodigoUsuario & ")")
@@ -221,7 +223,7 @@
 #End Region
 
     Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
-        GL_InmuebleReservado = "NO"
+        GL_InmuebleReservado = ""
         Salir()
     End Sub
     Private Sub Salir()

@@ -19,6 +19,7 @@ Module ConexionWS_Rest
         Public Property Message As String
         Public Property Code As String
 
+
     End Class
     Public Function LlamarWebServicePOSTRestSharp(Funcion As String, PostData As String) As clResultado
 
